@@ -1,0 +1,1 @@
+// displays resources one at a time when clicked

@@ -1,0 +1,1 @@
+// fetches pantry information from server

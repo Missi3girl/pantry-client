@@ -1,0 +1,1 @@
+// To display one pantry at a time when clicked on
