@@ -1,1 +1,0 @@
-// displays all resources 
