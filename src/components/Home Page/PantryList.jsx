@@ -1,1 +1,0 @@
-// To display all pantries in a scrollable list next to the map
