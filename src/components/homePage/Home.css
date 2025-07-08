@@ -1,1 +1,18 @@
-/* Entire Home view style page */
+.home-container { 
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.home-header {
+    text-align: center;
+    padding: 20px; 
+    font-size: 2em;
+    background-color: #d9a348;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around
+    background-color: #624c7a;
+}
