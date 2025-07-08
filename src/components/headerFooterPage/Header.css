@@ -1,0 +1,61 @@
+
+ul, header, nav, h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    list-style-type: none;
+}
+
+h1 {
+
+}
+
+
+#header {
+    text-shadow: var(--black) 1px 0 7px;
+    background-color: var(--green);
+    padding: 10px;
+    height: 7em;
+}
+
+#nav {
+    width: 100%;
+    background-color: var(--purple);
+    border: 2px solid var(--gold);
+}
+
+
+ul {
+    justify-content: space-evenly;
+    width: 96vw;
+    font-size: 1em;
+    font-family: 'mrs eaves';
+    list-style-type: none;
+    text-decoration: none;
+}
+
+ol {
+    justify-content: space-evenly;
+    padding: 2em;
+    list-style-type: none;
+    text-decoration: none;
+    align-items: right;
+}
+
+#footer {
+    background-color: var(--green);
+    flex-direction: column;
+    text-align: right;
+    padding: 3px;
+    background-color: var(--purple);
+    border: 2px solid var(--gold);
+
+    > a {
+        padding: 3em;
+        
+    }
+}
