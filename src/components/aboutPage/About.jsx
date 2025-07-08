@@ -1,4 +1,5 @@
 // Entry point for route with imported components for the About page
+import aboutPhoto from '../../assets/Images/purple.jpeg'
 
 import React from 'react'
 import './About.css'
@@ -15,7 +16,7 @@ function About() {
             </div>
             <div className="aboutPhoto">
                 <div id="photoDiv">
-                    
+                    <img src={aboutPhoto} />
                 </div>
             </div>
          </div>
