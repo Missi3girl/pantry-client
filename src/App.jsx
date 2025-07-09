@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Header from './components/headerFooterPage/Header'
+import Footer from './components/headerFooterPage/Footer'
+import About from './components/AboutPage/About'
 
 function App() {
 
     return (
         <>
-            <h1>Welcome to your front end</h1>
+              <Header />
+              <About />
+              <Footer />
         </>
     )
 }

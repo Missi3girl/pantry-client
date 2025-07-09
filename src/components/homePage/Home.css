@@ -1,5 +1,9 @@
+.body {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+}
+
 .home-container { 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
     margin: 0;
     padding: 0;
 }
