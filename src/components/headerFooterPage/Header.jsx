@@ -22,7 +22,7 @@ function Header() {
                    <li><a href="/findabank" class="nav-link">Find a Bank</a></li>
                    <li><a href="/getinvolved" class="nav-link">Get Involved</a></li>
                    <li><a href="/about" class="nav-link">About</a></li>
-                   <li><a href="/contact" class="nav-link">Contact</a></li>
+                   <li><a href="/resources" class="nav-link">Resources</a></li>
             </ul>
          </div>
          </div>
