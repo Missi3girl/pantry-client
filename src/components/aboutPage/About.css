@@ -10,16 +10,18 @@
 
 .aboutStory {
     float: left;
-    border: 3px solid var(--gold);
+    border: 2px 1px solid var(--gold);
     height: 100%;
     width: 60%;
 }
 
 .aboutPhoto {
     float: right;
-    border: 3px solid var(--gold);
+    border: 1px 0 0 0 solid var(--gold);
     height: 100%;
     width: 39%;
+    position: relative;
+    overflow: hidden;
 }
 
 h2 {
@@ -43,9 +45,12 @@ h2 {
 }
 
 #photoDiv {
-    border: 3px solid var(--black);
 }
 
-img {
-    width: 90%;
+
+#photoDiv img {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
 }
