@@ -15,8 +15,7 @@
     border: 2px 1px solid var(--gold);
     height: 100%;
     width: 60%;
-    overflow: scroll;
-    
+    overflow: auto;
 }
 
 .resourcePhoto {
@@ -36,14 +35,14 @@ h2 {
     padding: 0 1em;
     margin-top: 3%;
     color: var(--grey);
-    
 }
 
 h3 {
-    color: var(--black);
+    color: var(--grey);
     font-size: 1.5em;
     text-indent: 1em;
     padding: .5em 0 ;
+    text-shadow: var(--black) 4px 0 7px;
 }
 
 #resource-p {
@@ -55,7 +54,8 @@ h3 {
 
 #resource-box {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    background-color: var(--gold);
+    background-color: hsla(41, 100%, 57%, .4);
+    border-radius: 20px;
 }
 
 #quote {
@@ -80,5 +80,4 @@ h3 {
     top: 0;
     left: 0;
 }
-
 

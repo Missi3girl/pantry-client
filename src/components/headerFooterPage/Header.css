@@ -43,11 +43,11 @@ ol {
 }
 
 #footer {
-    background-color: var(--green);
-  background-image: url('../../assets/Images/footerimg3.png');
+background-color: var(--green);
+  /*background-image: url('../../assets/Images/footerimg3.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: right;*/
     font-size: 1.2em;
     flex-direction: column;
     text-align: right;
@@ -81,4 +81,11 @@ a:hover {
 .nav-link {
     font-size: 1.5em;
     color: var(--grey);
+    font-family: "mrs-eaves", serif;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--grey);
+    font-size: 1.8em;
+    text-shadow: var(--black) 3px 0 7px;
+    text-decoration: dotted;
 }

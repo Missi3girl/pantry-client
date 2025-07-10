@@ -24,7 +24,7 @@ function Header() {
                    <li><Link to="/" className="nav-link">Find a Bank</Link></li>
                    <li><Link to="/getinvolved" className="nav-link">Get Involved</Link></li>
                    <li><Link to="/about" className="nav-link">About</Link></li>
-                   <li><Link to="/resources" className="nav-link">Resources</Link></li>
+                   <li><Link to="/resources"className="nav-link">Resources</Link></li>
             </ul>
          </div>
          </div>

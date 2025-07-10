@@ -34,6 +34,7 @@ export default function RsrcList() {
             <a href="https://www.housinghelpcenter.com/" alt="Housing Help Center of Atlanta">Housing Help Center - City of Atlanta</a>
            </p>
              </div>
+
         
             </div>
             <div className="resourcePhoto">
