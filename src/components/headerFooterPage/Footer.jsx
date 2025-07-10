@@ -6,11 +6,11 @@ import './Header.css'
 function Footer() {
   return (
         <div id="footer">
-             <ol class="footer-ul">
-                   <li><a href="" class="footer-link">Find a Bank</a></li>
-                   <li><a href="" class="footer-link">Get Involved</a></li>
-                   <li><a href="" class="footer-link">About</a></li>
-                   <li><a href="" class="footer-link">Contact</a></li>
+             <ol className="footer-ul">
+                   <li><a href="" className="footer-link">Find a Bank</a></li>
+                   <li><a href="" className="footer-link">Get Involved</a></li>
+                   <li><a href="" className="footer-link">About</a></li>
+                   <li><a href="" className="footer-link">Contact</a></li>
             </ol>
          </div>
   )
