@@ -9,6 +9,7 @@
 //style is in App.css
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
@@ -16,13 +17,14 @@ function Header() {
     <div>
         <div id="header">
             <h1 id="smallCap">The Pantry Door</h1>
+            <h2 id="italic">"No locks. No judgement. Just help."</h2>
           </div>
         <div id="nav">
              <ul class="nav-ul">
-                   <li><a href="/findabank" class="nav-link">Find a Bank</a></li>
-                   <li><a href="/getinvolved" class="nav-link">Get Involved</a></li>
-                   <li><a href="/about" class="nav-link">About</a></li>
-                   <li><a href="/resources" class="nav-link">Resources</a></li>
+                   <li><Link to="/" className="nav-link">Find a Bank</Link></li>
+                   <li><Link to="/getinvolved" className="nav-link">Get Involved</Link></li>
+                   <li><Link to="/about" className="nav-link">About</Link></li>
+                   <li><Link to="/resources" className="nav-link">Resources</Link></li>
             </ul>
          </div>
          </div>

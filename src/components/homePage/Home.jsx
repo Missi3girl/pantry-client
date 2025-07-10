@@ -3,9 +3,9 @@
 import React from 'react'
 import './Home.css'
 
-function Contact() {
+function Home() {
   return (
-        <div id="Home">
+        <div id="home">
             <h1>This here will be the Home page.</h1>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
