@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { submitGetInvolved } from '../../services/getInvolvedSvc';
+import './FormGetInvolved.css';
 import { Container, Box, TextField, Select, MenuItem, FormControl, InputLabel, Button, Paper  } from '@mui/material';
 
 // a list of reasons for the dropdown (select) in the form
 const reasons = ["I need help", "I want to volunteer", "Suggest new pantry", "Update current pantry", "Other"];
 
-export default function GetInvolvedForm() {
+export default function FormGetInvolved() {
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -35,16 +36,17 @@ export default function GetInvolvedForm() {
 
     // handles what happens when the form is submitted by user
     const handleSubmit = async (e) => {
-        e.preventdefault();
+        e.preventDefault();
         if (validate()) {
             console.log("submit form", form);
             await submitGetInvolved(form);
-        };
+        }
+    };
 
   return (
     <Container maxWidth="sm">
         <Paper sx={{ p: 3 }}>
-            <form onSubmit={handleSubmit}>
+            <form className="form-get-involved" onSubmit={handleSubmit}>
                 <FormControl fullWidth required error={!!errors.reason} sx={{ mb: 2 }}>
                     <InputLabel>Reason</InputLabel>
                     <Select name="reason" value={form.reason} onChange={handleChange}>
