@@ -5,6 +5,8 @@ import Footer from './components/headerFooterPage/Footer'
 import About from './components/AboutPage/About'
 import Home from './components/homePage/Home'
 
+
+
 function App() {
 
     return (

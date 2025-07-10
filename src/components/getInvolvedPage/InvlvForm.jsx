@@ -1,1 +1,0 @@
-// get involved form to volunteer/submit pantry info
