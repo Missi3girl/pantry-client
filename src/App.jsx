@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import InvlvForm from './components/getInvolvedPage/InvlvForm'
+import InvlvForm from './components/getInvolvedPage/FormGetInvolved'
 
 function App() {
 
