@@ -60,10 +60,10 @@ export default function FormGetInvolved() {
                     </Select>
                 </FormControl>
 
-                <TextField label="Full Name" name="fullName" fullWidth required value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
-                <TextField label="Email" name="email" fullWidth required value={form.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} sx={{ mb: 2 }} />
-                <TextField label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} sx={{ mb: 2 }} />
-                <TextField label="Message" name="message" multiline rows={5} fullWidth required value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
+                <TextField className="gi-text-field" label="Full Name" name="fullName" fullWidth required value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
+                <TextField className="gi-text-field" label="Email" name="email" fullWidth required value={form.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} sx={{ mb: 2 }} />
+                <TextField className="gi-text-field" label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} sx={{ mb: 2 }} />
+                <TextField className="gi-text-field" label="Message" name="message" multiline rows={5} fullWidth required value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
 
                 <Button variant="contained" type="submit">Send</Button>
             </form>
