@@ -7,3 +7,28 @@
 // includes log in/out
 
 //style is in App.css
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Header.css'
+
+function Header() {
+  return (
+    <div>
+        <div id="header">
+            <h1 id="smallCap">The Pantry Door</h1>
+            <h2 id="italic">"No locks. No judgement. Just help."</h2>
+          </div>
+        <div id="nav">
+             <ul class="nav-ul">
+                   <li><Link to="/" className="nav-link">Find a Bank</Link></li>
+                   <li><Link to="/getinvolved" className="nav-link">Get Involved</Link></li>
+                   <li><Link to="/about" className="nav-link">About</Link></li>
+                   <li><Link to="/resources"className="nav-link">Resources</Link></li>
+            </ul>
+         </div>
+         </div>
+  )
+}
+
+export default Header

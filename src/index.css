@@ -6,5 +6,39 @@ Font color
 
 
 :root {
-	font-family: Arial, Helvetica, sans-serif;
+  --green: #2D4F2B;
+  --purple: #805A83;
+  --gold: #FFB823;
+  --grey: #E4E0DD;
+  --black: #141A13;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+
+#smallCap {
+	font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+	font-weight: 400;
+	font-style: normal;
+	color: var(--gold);
+    font-size: 5em;
+    margin: 0;
+    line-height: .9
+}
+
+#italic {
+	font-family: "mrs-eaves", serif;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--grey);
+    font-size: 1.8em;
+    text-shadow: var(--black) 3px 0 7px;
+    text-decoration: dotted;
+    margin: 0;
+    padding: 0;
 }
