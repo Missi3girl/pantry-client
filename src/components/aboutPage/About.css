@@ -2,24 +2,27 @@
 
 
 #mainAbout {
-    background-color: var(--grey);
-    border: 3px solid var(--gold);
+    background-color: var(--green);
     height: 68vh;
     width: 100%;
 }
 
 .aboutStory {
     float: left;
-    border: 3px solid var(--gold);
+    border: 0 2px solid var(--gold);
     height: 100%;
     width: 60%;
+    overflow: auto;
 }
 
 .aboutPhoto {
     float: right;
-    border: 3px solid var(--gold);
+    border: 1px 0 0 0 solid var(--gold);
     height: 100%;
     width: 39%;
+    position: relative;
+    overflow: hidden;
+    border-left: 3px solid var(--gold);
 }
 
 h2 {
@@ -27,23 +30,38 @@ h2 {
     font-size: 3em;
     padding: 0 1em;
     margin-top: 3%;
+    text-shadow: var(--black) 4px 0 7px;
 }
 
 #story {
     padding: 0 2em;
     font-size: 1.4em;
     text-indent: 5%;
+    color: var(--gold);
+    text-shadow: var(--black) 1px 0 7px;
 }
 
 #quote {
     font-family: "mrs-eaves", serif;
     font-style: italic;
-    font-size: 3em;
+    font-size: 4em;
     padding: 0 2em;
+    color: var(--grey);
+    text-shadow: var(--black) 4px 0 7px;
 }
 
 #photoDiv {
-    border: 1px solid var(--black);
-    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+}
 
+
+#photoDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
 }

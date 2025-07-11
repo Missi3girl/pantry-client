@@ -28,15 +28,17 @@ body {
 	color: var(--gold);
     font-size: 5em;
     margin: 0;
+    line-height: .9
 }
 
 #italic {
-		font-family: "mrs-eaves", serif;
+	font-family: "mrs-eaves", serif;
 	font-weight: 400;
 	font-style: italic;
 	color: var(--grey);
-    font-size: 2em;
-    text-decoration: underline overline var(--purple);
+    font-size: 1.8em;
+    text-shadow: var(--black) 3px 0 7px;
     text-decoration: dotted;
     margin: 0;
+    padding: 0;
 }
