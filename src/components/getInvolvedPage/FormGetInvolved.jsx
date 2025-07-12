@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useState } from 'react';
 import { submitGetInvolved } from '../../services/getInvolvedSvc';
 import './FormGetInvolved.css';
 import { 
@@ -24,7 +24,7 @@ const reasons = [
     "Other"
 ];
 
-const FormGetInvolved = memo(() => {
+export default function FormGetInvolved() {
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -178,7 +178,4 @@ const FormGetInvolved = memo(() => {
         </Snackbar>
     </Container>
   );
-});
-
-
-export default FormGetInvolved;
+}
