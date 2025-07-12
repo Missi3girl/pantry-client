@@ -1,21 +1,41 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { submitGetInvolved } from '../../services/getInvolvedSvc';
 import './FormGetInvolved.css';
-import { Container, Box, TextField, Select, MenuItem, FormControl, InputLabel, Button, Paper  } from '@mui/material';
+import { 
+    Container, 
+    TextField, 
+    Select, 
+    MenuItem, 
+    FormControl, 
+    FormHelperText,
+    InputLabel, 
+    Button, 
+    Paper, 
+    Snackbar, 
+    Alert 
+} from '@mui/material';
 
 // a list of reasons for the dropdown (select) in the form
-const reasons = ["I need help", "I want to volunteer", "Suggest new pantry", "Update current pantry", "Other"];
+const reasons = [
+    "I need help", 
+    "I want to volunteer", 
+    "Suggest new pantry", 
+    "Update current pantry", 
+    "Other"
+];
 
-export default function FormGetInvolved() {
+const FormGetInvolved = memo(() => {
     const [form, setForm] = useState({
         fullName: "",
         email: "",
         phoneNumber: "",
         message: "",
-        reason: "" // a dropdown menu
+        typeOfInquiry: "" // a dropdown menu
     });
 
     const [errors, setErrors] = useState({});
+
+    const [successOpen, setSuccessOpen] = useState(false);
 
     // field validation ensures that the required fields are filled out before submitting
     const validate = () => {
@@ -23,7 +43,8 @@ export default function FormGetInvolved() {
         if (!form.fullName) newErrors.fullName = "Please enter your full name.";
         if (!form.email) newErrors.email = "Email is required";
         if (!form.message) newErrors.message = "Please enter a message, so we know how best to assist you.";
-        if (!form.reason) newErrors.reason = "Please select a reason";
+        if (!form.typeOfInquiry) newErrors.typeOfInquiry = "Please select a reason";
+        
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -37,37 +58,127 @@ export default function FormGetInvolved() {
     // handles what happens when the form is submitted by user
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submitting form:", form); 
+
+        const isValid = validate();
+        
+        if (!isValid) {
+            return;
+        }
+
+        try {
+          console.log("Submitting form:", form); 
+          await submitGetInvolved(form);
+          setSuccessOpen(true);
+          
+          // resets form only if valid submission
+          setForm({
+            fullName: "",
+            email: "",
+            phoneNumber: "",
+            message: "",
+            typeOfInquiry: "",
+          });
+        
+          // resets errors only after valid submission
+          setErrors({});
     
-        if (validate()) {
-            try {
-              const response = await submitGetInvolved(form);
-              console.log("Backend response:", response);
-            } catch (err) {
-              console.error("Error submitting to backend:", err);
-            }
+        } catch (err) {
+          console.error("Error submitting to backend:", err);
         }
     };
+
+    console.log("Component Render - Current errors state:", errors);
+    console.log("Component Render - errors.fullName:", errors.fullName);
 
   return (
     <Container maxWidth="sm">
         <Paper sx={{ p: 3 }}>
             <form className="form-get-involved" onSubmit={handleSubmit}>
-                <FormControl fullWidth required error={!!errors.reason} sx={{ mb: 2 }}>
-                    <InputLabel>Reason</InputLabel>
-                    <Select name="reason" value={form.reason} onChange={handleChange}>
+                <FormControl fullWidth error={!!errors.typeOfInquiry} sx={{ mb: 2 }}>
+                    <InputLabel id="typeOfInquiry-label">Select Reason</InputLabel>
+                    <Select
+                        labelId="typeOfInquiry-label"
+                        id="typeOfInquiry"
+                        label="Select Reason" 
+                        name="typeOfInquiry" 
+                        value={form.typeOfInquiry} 
+                        onChange={handleChange}
+                        MenuProps={{
+                            PaperProps: {
+                                sx: {
+                                    width: 'auto',
+                                    '& .MuiMenu-list': {
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        width: 'auto',
+                                        gap: '1.2rem',
+                                        padding: 0
+                                    },
+                                    '& .MuiMenuItem-root': {
+                                        fontFamily: 'mrs-eaves, serif',
+                                        color: 'var(--green)',
+                                        fontSize: '1.5rem',
+                                        padding: '10px 16px',
+                                        borderBottom: '1px solid var(--gold)',
+                                        '&: last-child': {
+                                            borderBottom: 'none'
+                                        },                                 
+                                        '&:hover': {
+                                            backgroundColor: '#f3e5f5',
+                                            color: 'var(--purple)'
+                                        },
+                                    },
+                                },
+                            },
+                        }}
+                    >
                         {reasons.map((r) => <MenuItem key={r} value={r}>{r}</MenuItem>)}
                     </Select>
+                    {errors.typeOfInquiry && 
+                    <FormHelperText>{errors.typeOfInquiry}</FormHelperText>}
                 </FormControl>
 
-                <TextField className="gi-text-field" label="Full Name" name="fullName" fullWidth required value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
-                <TextField className="gi-text-field" label="Email" name="email" fullWidth required value={form.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} sx={{ mb: 2 }} />
-                <TextField className="gi-text-field" label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} sx={{ mb: 2 }} />
-                <TextField className="gi-text-field" label="Message" name="message" multiline rows={5} fullWidth required value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
+                <TextField label="Full Name" name="fullName" fullWidth value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
 
-                <Button variant="contained" type="submit">Send</Button>
+                <TextField label="Email" name="email" fullWidth value={form.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} sx={{ mb: 2 }} />
+
+                <TextField label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} sx={{ mb: 2 }} />
+
+                <TextField label="Message" name="message" multiline rows={5} fullWidth value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
+
+                <Button variant="contained" type="submit" onClick={() => console.log("BUTTON CLICKED - onClick!")}>Send</Button>
             </form>
         </Paper>
+
+        <Snackbar
+            open={successOpen}
+            autoHideDuration={4000}
+            onClose={() => setSuccessOpen(false)}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            sx={{
+                top: '30% !important'
+            }}
+        >
+            <Alert 
+                onClose={() => setSuccessOpen(false)} 
+                severity="success" 
+                variant="filled"
+                sx={{
+                    bgcolor: 'var(--purple)',
+                    color: 'var(--gold)',
+                    fontFamily: 'mrs-eaves, serif',
+                    fontWeight: 'bold',
+                    fontSize: '2rem',
+                    borderRadius: 2
+                    }}
+            >
+                Your message was sent! 
+                Someone will contact you within 48 hours.
+            </Alert>
+        </Snackbar>
     </Container>
   );
-}
+});
+
+
+export default FormGetInvolved;
