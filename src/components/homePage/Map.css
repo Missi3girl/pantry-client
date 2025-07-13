@@ -1,1 +1,5 @@
 /* map display style page */
+
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+
