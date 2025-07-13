@@ -35,9 +35,9 @@ h2 {
 
 #story {
     padding: 0 2em;
-    font-size: 1.4em;
+    font-size: 1.1em;
     text-indent: 5%;
-    color: var(--gold);
+    color: var(--grey);
     text-shadow: var(--black) 1px 0 7px;
 }
 
@@ -46,7 +46,7 @@ h2 {
     font-style: italic;
     font-size: 4em;
     padding: 0 2em;
-    color: var(--grey);
+    color: var(--gold);
     text-shadow: var(--black) 4px 0 7px;
 }
 
@@ -64,4 +64,19 @@ h2 {
     overflow: hidden;
     top: 0;
     left: 0;
+}
+
+.inline-link {
+    text-decoration: 1px solid underline !important;
+    font-family: "mrs-eaves", serif;
+    font-style: italic;
+    font-size: 1.45em;
+}
+
+.inline-link:hover {
+    font-family: "mrs-eaves", serif;
+    font-style: italic;
+    font-size: 1.45em;
+    font-weight: bold;
+    color: var(--gold);
 }

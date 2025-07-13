@@ -3,16 +3,19 @@ import aboutPhoto from '../../assets/Images/purple.jpeg'
 
 import React from 'react'
 import './About.css'
+import { Link } from 'react-router-dom'
 
 function About() {
   return (
         <div id="mainAbout">
             <div className="aboutStory">
             <h2>Our Story</h2>
-            <p id="story">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus molestie semper dolor, a facilisis erat suscipit ac. Etiam at elit felis. Mauris iaculis purus at rutrum ornare. Quisque non ligula at sapien interdum placerat at ut quam. Proin ac tempus nisi. Fusce non dapibus neque, eget bibendum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam dignissim dui dui, nec tempor mauris efficitur nec. Vivamus sed orci sed ipsum placerat ornare. Nullam scelerisque faucibus ipsum, tempus sagittis neque convallis id. Integer luctus mauris mattis elit pellentesque, vel consequat metus dignissim.</p>
-            <p id="story">Praesent in nulla at nulla tristique ullamcorper non vitae lectus. Maecenas tincidunt nisi et enim elementum fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer feugiat justo eu pulvinar pretium. Nulla metus nisl, aliquet eget augue et, ultrices condimentum lacus. Nunc eget enim vitae purus accumsan placerat sit amet vel ligula. Suspendisse mattis a arcu gravida dictum. Donec mollis ornare bibendum. Proin ut convallis nisl.</p>
+            <p id="story">“The number you have dialed is no longer in service, please check the number and try again.”; so you do, only to be met with the same disappointing message. You pull up to your neighborhood church to see the sign on the door, “Pantry Closed”, and wonder where your dinner is going to come from now. A list of food pantries, handed out at the health department, all require that you be a resident of a county that you don’t live in. These are just a few of the dozens of real life reasons why the needs of so many families are not being met. If you’ve ever had to deal with the frustration of finding help, you are not alone! With resources closing their doors every day and new opportunities becoming available, it’s hard to keep up with the help that is out there, especially if you don’t live in a downtown sector, or even the suburbs of a metro area. The Pantry Door strives to provide the most up to date information for food pantries across all of Georgia, and to highlight resources across major cities throughout our beloved state.</p>
+            <p id="story">As children, one of the founders of The Pantry Door felt the pangs of hunger with few available resources; while another founder, whose family were survivors of a house fire, were well taken care of due to the admirable outpouring of a community that rallied around them to provide food and clothes. What was the difference between the two families? Access to information and local resources. Yet another founder, seeing those in need, has always felt the desire to help, but wondered how to do so. When the three met, the vision for The Pantry Door became clear; a virtual pantry that was always stocked and never locked. So come on in, there’s plenty.</p>
+            <p id="story">Whether you are in need of help, or want to provide a service to your community, please click <Link to="/getinvolved" className="inline-link">here.</Link></p>
             
-            <p id="quote">"A quote about being involved in your community, or something."</p>
+            <p id="quote">"Life's most persistent and urgent question is, What are you doing for others?" Martin Luther King, Jr.</p>
+
             </div>
             <div className="aboutPhoto">
                 <div id="photoDiv">
