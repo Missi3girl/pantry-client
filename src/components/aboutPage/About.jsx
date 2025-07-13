@@ -14,7 +14,7 @@ function About() {
             <p id="story">As children, one of the founders of The Pantry Door felt the pangs of hunger with few available resources; while another founder, whose family were survivors of a house fire, were well taken care of due to the admirable outpouring of a community that rallied around them to provide food and clothes. What was the difference between the two families? Access to information and local resources. Yet another founder, seeing those in need, has always felt the desire to help, but wondered how to do so. When the three met, the vision for The Pantry Door became clear; a virtual pantry that was always stocked and never locked. So come on in, there’s plenty.</p>
             <p id="story">Whether you are in need of help, or want to provide a service to your community, please click <Link to="/getinvolved" className="inline-link">here.</Link></p>
             
-            <p id="quote">"Life's most persistent and urgent question is, What are you doing for others?" Martin Luther King, Jr.</p>
+            <p id="quote">"Life's most persistent and urgent question is, What are you doing for others?"<br />~Martin Luther King, Jr.</p>
 
             </div>
             <div className="aboutPhoto">
