@@ -4,8 +4,7 @@ import Header from './components/headerFooterPage/Header'
 import Footer from './components/headerFooterPage/Footer'
 import About from './components/AboutPage/About'
 import Home from './components/homePage/Home'
-import Map from 'react-map-gl/mapbox'
-import mapboxgl from 'mapbox-gl'
+
 
 function App() {
 
@@ -19,4 +18,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
