@@ -12,7 +12,12 @@ function App() {
     return (
         <BrowserRouter>
               <Header />
-              <About />
+                <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/getinvolved" element={<GetInvolved />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/resources" element={<RsrcList />} />
+              </Routes>
               <Footer />
         </BrowserRouter>
     )

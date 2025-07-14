@@ -10,7 +10,7 @@ function Footer() {
                    <li><a href="" className="footer-link">Find a Bank</a></li>
                    <li><a href="" className="footer-link">Get Involved</a></li>
                    <li><a href="" className="footer-link">About</a></li>
-                   <li><a href="" className="footer-link">Contact</a></li>
+                   <li><a href="" className="footer-link">Resources</a></li>
             </ol>
          </div>
   )
