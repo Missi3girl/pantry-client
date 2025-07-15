@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Entry point for route with imported components for the Get Involved page
 import involvedPhoto from '../../assets/Images/contact.jpeg'
 import FormGetInvolved from './FormGetInvolved'
@@ -20,15 +19,5 @@ export default function GetInvolved() {
                 </div>
             </div>
          </div>
-=======
-import React from 'react'
-import FormGetInvolved from './FormGetInvolved'
-
-export default function GetInvolved() {
-  return (
-    <div id="involved">
-      <FormGetInvolved />  
-     </div>
->>>>>>> 0c2dea39912b0c5588c7d2e80dd1a80f5c8319d3
   )
 }
