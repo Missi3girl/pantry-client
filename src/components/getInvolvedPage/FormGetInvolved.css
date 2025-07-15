@@ -1,9 +1,36 @@
+/* The Wrapper */
 .form-get-involved {
     display: flex;
     flex-direction: column;
     gap: .25rem;
     padding: .25rem;
+    background-color: var(--purple);
 }
+
+/* The Container */
+.form-outer-container {
+
+}
+
+/* Input text */
+.form-get-involved .MuiInputBase-input {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif !important;
+    color: var(--grey) !important;
+}
+
+
+/* Text Fields and Select*/
+.form-get-involved .MuiOutlinedInput-root {
+    border-radius: 8px;
+    background-color: var(--purple);
+    
+}
+
+/* Focused Border Color */
+.form-get-involved .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 5px solid var(--gold);
+}
+
 
 .form-get-involved .MuiTextField-root,
 .form-get-involved .MuiFormControl-root {
@@ -12,4 +39,6 @@
 
 .form-get-involved button {
     align-self: flex-start;
+    background-color: var(--purple);
 }
+

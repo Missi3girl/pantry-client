@@ -1,12 +1,4 @@
 /* 
     Header Styling: Site title, nav bar
-    & Footer styling 
+    & Footer styling located in Header.css
 */
-
-
-#header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
