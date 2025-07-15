@@ -4,7 +4,7 @@ import Map from './map';
 const Home = () => {
   return (
     <div>
-      <h1>Pantry Door</h1>
+      <h1>Pantry Door map</h1>
       <Map />
     </div>
   );
