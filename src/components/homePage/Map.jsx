@@ -1,45 +1,41 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
-import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtY3dpbnJhYzAycGYybHBydGpmdHBpdG8ifQ.y3jyrF-ho57nklyYVfocWA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZDNwemMwYTA3Nngya29paGpkZGd1cTQifQ.zqgZy0q8PJVH9rA7VdSDog';
 
 const Map = () => {
-  const mapRef = useRef(null);
-  const mapInstance = useRef(null);
+  const mapContainerRef = useRef(null);
   const [lng, setLng] = useState(-84.3733);
   const [lat, setLat] = useState(33.7550);
   const [zoom, setZoom] = useState(10);
 
   useEffect(() => {
-    if (!mapRef.current) return;
-
-    mapInstance.current = new mapboxgl.Map({
-      container: mapRef.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [lng, lat],
       zoom: zoom,
     });
 
-    mapInstance.current.on('move', () => {
-      const center = mapInstance.current.getCenter();
-      setLng(Number(center.lng.toFixed(4)));
-      setLat(Number(center.lat.toFixed(4)));
-      setZoom(Number(mapInstance.current.getZoom().toFixed(2)));
+    map.on('move', () => {
+      setLng(map.getCenter().lng.toFixed(4));
+      setLat(map.getCenter().lat.toFixed(4));
+      setZoom(map.getZoom().toFixed(2));
     });
 
-    return () => {
-      mapInstance.current.remove();
-    };
+    return () => map.remove();
   }, []);
 
   return (
-    <div className="map-wrapper">
-      <div ref={mapRef} className="map-container" />
-      <div className="map-info">
+    <div>
+      <div className="sidebar">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
+      <div
+        ref={mapContainerRef}
+        style={{ width: '100%', height: '500px' }}
+      />
     </div>
   );
 };
