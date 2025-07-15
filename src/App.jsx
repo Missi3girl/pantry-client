@@ -5,6 +5,7 @@ import Footer from './components/headerFooterPage/Footer'
 import About from './components/aboutPage/About'
 import GetInvolved from './components/getInvolvedPage/GetInvolved'
 import Home from './components/homePage/Home'
+import RsrcList from './components/resourcesPage/RsrcList'
 
 function App() {
 
@@ -24,3 +25,5 @@ function App() {
 }
 
 export default App
+
+
