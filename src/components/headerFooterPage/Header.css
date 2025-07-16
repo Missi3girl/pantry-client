@@ -47,17 +47,19 @@ ul {
 ol {
     justify-content: space-evenly;
     padding: 2em;
-    list-style-type: none;
+    list-style: none;
     text-decoration: none;
     align-items: right;
 }
 
+
+
 #footer {
-background-color: var(--green);
-  /*background-image: url('../../assets/Images/footerimg3.png');
+/* background-color: var(--green);
+  background-image: url('../../assets/Images/footerimg3.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;*/
+  background-position: right; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -124,6 +126,14 @@ a:hover {
     justify-content: center;
     text-shadow: var(--black) 1px 0 7px;
     width: 33%;
+}
+
+#footer2 {
+    /* background-color: var(--green);
+  background-image: url('../../assets/Images/footerimg3.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right; */
 }
 
 .pLove {

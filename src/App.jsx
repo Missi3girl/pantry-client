@@ -12,12 +12,7 @@ function App() {
     return (
         <BrowserRouter>
               <Header />
-<<<<<<< HEAD
-                <Routes>
-=======
-
               <Routes>
->>>>>>> 0c2dea39912b0c5588c7d2e80dd1a80f5c8319d3
                 <Route path="/" element={<Home />} />
                 <Route path="/getinvolved" element={<GetInvolved />} />
                 <Route path="/about" element={<About />} />
