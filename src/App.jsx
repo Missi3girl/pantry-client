@@ -6,6 +6,7 @@ import About from './components/aboutPage/About'
 import GetInvolved from './components/getInvolvedPage/GetInvolved'
 import Home from './components/homePage/Home'
 import RsrcList from './components/resourcesPage/RsrcList'
+import SearchBar from './components/homePage/SearchBar'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
               <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/search" element={<SearchBar />} />
                 <Route path="/getinvolved" element={<GetInvolved />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/resources" element={<RsrcList />} />

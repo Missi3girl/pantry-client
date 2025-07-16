@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     padding: 0;
@@ -83,10 +84,18 @@ body {
   .search-bar input {
     padding: 8px;
     border: 1px solid #ccc;
+=======
+.location-card {
+    padding: 10px;
+    background-color: #eee;
+    margin-bottom: 10px;
+    border: 1px solid var(--gold);
+>>>>>>> fad78a1d79ce147eda1ed74ea3aa3a2ec8230f94
     border-radius: 5px;
-    flex: 1;
   }
+
   
+<<<<<<< HEAD
   .search-bar button {
     padding: 8px 16px;
     background-color: var(--purple);
@@ -128,3 +137,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
   } */
+=======
+
+>>>>>>> fad78a1d79ce147eda1ed74ea3aa3a2ec8230f94
