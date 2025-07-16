@@ -1,0 +1,10 @@
+.location-card {
+    padding: 10px;
+    background-color: #eee;
+    margin-bottom: 10px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+  }
+
+  
+
