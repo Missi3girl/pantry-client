@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitGetInvolved } from '../../services/getInvolvedSvc';
+import { submitGetInvolved } from '../services/getInvolvedSvc';
 import './FormGetInvolved.css';
 import { 
     Container, 
@@ -135,8 +135,7 @@ export default function FormGetInvolved() {
                     >
                         {reasons.map((r) => <MenuItem key={r} value={r}>{r}</MenuItem>)}
                     </Select>
-                    {errors.typeOfInquiry && 
-                    <FormHelperText>{errors.typeOfInquiry}</FormHelperText>}
+                    {errors.typeOfInquiry && <FormHelperText>{errors.typeOfInquiry}</FormHelperText>}
                 </FormControl>
 
                 <TextField label="Full Name" name="fullName" fullWidth value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
@@ -156,9 +155,7 @@ export default function FormGetInvolved() {
             autoHideDuration={4000}
             onClose={() => setSuccessOpen(false)}
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            sx={{
-                top: '30% !important'
-            }}
+            sx={{ top: '30% !important' }}
         >
             <Alert 
                 onClose={() => setSuccessOpen(false)} 

@@ -1,10 +1,14 @@
 import React from 'react'
-import FormGetInvolved from './FormGetInvolved'
+import LoginRegForm from './LoginRegForm'
+//import FormGetInvolved from './FormGetInvolved'
+
 
 export default function GetInvolved() {
   return (
     <div id="involved">
-      <FormGetInvolved />  
+      <LoginRegForm />
      </div>
   )
 }
+
+{/* <FormGetInvolved />   */}
