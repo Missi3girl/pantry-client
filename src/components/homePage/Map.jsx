@@ -41,7 +41,8 @@ const Map = () => {
 
 
     return () => map.remove();
-  }, [lng, lat, zoom]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
