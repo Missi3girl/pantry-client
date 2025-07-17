@@ -128,13 +128,13 @@ a:hover {
     width: 33%;
 }
 
-#footer2 {
-    /* background-color: var(--green);
-  background-image: url('../../assets/Images/footerimg3.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right; */
-}
+/* #footer2 {
+    background-color: var(--green);
+    background-image: url('../../assets/Images/footerimg3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+} */
 
 .pLove {
     position: relative;
