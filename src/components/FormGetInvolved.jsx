@@ -93,7 +93,7 @@ export default function FormGetInvolved() {
 
   return (
     <Container maxWidth="sm">
-        <Paper sx={{ p: 3 }}>
+        <Paper sx={{ p: 3, backgroundColor: 'var(--green)' }}>
             <form className="form-get-involved" onSubmit={handleSubmit}>
                 <FormControl fullWidth error={!!errors.typeOfInquiry} sx={{ mb: 2 }}>
                     <InputLabel id="typeOfInquiry-label">Select Reason</InputLabel>
@@ -107,6 +107,14 @@ export default function FormGetInvolved() {
                         MenuProps={{
                             PaperProps: {
                                 sx: {
+                                    backgroundColor: 'var(--green)',
+                                    input: {
+                                        fontFamily: '"mrs-eaves", serif',
+                                        backgroundColor: 'var(--purple)',
+                                        '::placeholder': {
+                                            color: 'var(--grey)',
+                                        }
+                                    },
                                     width: 'auto',
                                     '& .MuiMenu-list': {
                                         display: 'flex',
@@ -116,8 +124,12 @@ export default function FormGetInvolved() {
                                         padding: 0
                                     },
                                     '& .MuiMenuItem-root': {
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'var(--gold)',
+                                            borderWidth:'2px',
+                                        },
                                         fontFamily: 'mrs-eaves, serif',
-                                        color: 'var(--green)',
+                                        color: 'var(--grey)',
                                         fontSize: '1.5rem',
                                         padding: '10px 16px',
                                         borderBottom: '1px solid var(--gold)',
@@ -127,7 +139,7 @@ export default function FormGetInvolved() {
                                         '&:hover': {
                                             backgroundColor: '#f3e5f5',
                                             color: 'var(--purple)'
-                                        },
+                                        }
                                     },
                                 },
                             },
