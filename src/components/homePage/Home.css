@@ -40,7 +40,7 @@ body {
     overflow: hidden;
     /* border-right: 3px solid var(--gold);
     border-left: 3px solid var(--gold); */
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -69,7 +69,6 @@ body {
   }
   
   .search-bar {
-    margin-top: 15px;
     display: flex;
     align-items: center;
     gap: 10px;

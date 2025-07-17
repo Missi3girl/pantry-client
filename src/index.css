@@ -23,6 +23,8 @@ body {
     align-items: center;
     margin: 0;
     background-color: var(--green);
+    font-family: "mrs-eaves", serif;
+    scrollbar-color: var(--purple) var(--gold);
 }
 
 
@@ -33,7 +35,7 @@ body {
 	color: var(--gold);
     font-size: 5em;
     margin: 0;
-    line-height: .9
+    line-height: .9;
 }
 
 #italic {
@@ -46,4 +48,10 @@ body {
     text-decoration: dotted;
     margin: 0;
     padding: 0;
+}
+
+#roman {
+    font-family: "mrs-eaves", serif;
+	font-weight: 400;
+	font-style: normal;
 }

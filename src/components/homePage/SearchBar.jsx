@@ -24,7 +24,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search for panty by zip code"
         style={styles.input}
       />
-      <button type="submit" style={styles.button}>Search</button>
+      <button type="submit" style={styles.button}>SEARCH</button>
     </form>
   );
 };
@@ -34,7 +34,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '10px',
+    padding: '20px',
   },
   input: {
     padding: '8px',
@@ -45,8 +45,8 @@ const styles = {
   button: {
     padding: '8px 12px',
     borderRadius: '4px',
-    border: 'none',
-    backgroundColor: '#007bff',
+    border: '1px solid var(--gold)',
+    backgroundColor: 'var(--purple)',
     color: '#fff',
     cursor: 'pointer',
   }
