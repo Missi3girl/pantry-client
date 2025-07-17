@@ -9,7 +9,6 @@ import RsrcList from './components/resourcesPage/RsrcList'
 import SearchBar from './components/homePage/SearchBar'
 
 function App() {
-
     return (
         <BrowserRouter>
               <Header />

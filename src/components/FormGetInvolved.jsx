@@ -1,5 +1,7 @@
+// !This will go inside the user dashboard
+
 import { useState } from 'react';
-import { submitGetInvolved } from '../../services/getInvolvedSvc';
+import { submitGetInvolved } from '../services/getInvolvedSvc';
 import './FormGetInvolved.css';
 import { 
     Container, 
@@ -42,6 +44,7 @@ export default function FormGetInvolved() {
         const newErrors = {};
         if (!form.fullName) newErrors.fullName = "Please enter your full name.";
         if (!form.email) newErrors.email = "Email is required";
+        if (form.phoneNumber && !/^\d{10}$/.test(form.phoneNumber)) newErrors.phoneNumber = "Phone number must be 10 digits, no spaces or symbols";
         if (!form.message) newErrors.message = "Please enter a message, so we know how best to assist you.";
         if (!form.typeOfInquiry) newErrors.typeOfInquiry = "Please select a reason";
         
@@ -146,19 +149,18 @@ export default function FormGetInvolved() {
                     >
                         {reasons.map((r) => <MenuItem key={r} value={r}>{r}</MenuItem>)}
                     </Select>
-                    {errors.typeOfInquiry && 
-                    <FormHelperText>{errors.typeOfInquiry}</FormHelperText>}
+                    {errors.typeOfInquiry && <FormHelperText>{errors.typeOfInquiry}</FormHelperText>}
                 </FormControl>
 
                 <TextField label="Full Name" name="fullName" fullWidth value={form.fullName} onChange={handleChange} error={!!errors.fullName} helperText={errors.fullName} sx={{ mb: 2 }} />
 
                 <TextField label="Email" name="email" fullWidth value={form.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} sx={{ mb: 2 }} />
 
-                <TextField label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} sx={{ mb: 2 }} />
+                <TextField label="Phone Number" name="phoneNumber" fullWidth value={form.phoneNumber} onChange={handleChange} inputProps={{ pattern: "\\d{10}" }} error={!!errors.phoneNumber} helperText={errors.phoneNumber} sx={{ mb: 2 }} />
 
                 <TextField label="Message" name="message" multiline rows={5} fullWidth value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
 
-                <Button variant="contained" type="submit" onClick={() => console.log("BUTTON CLICKED - onClick!")}>Send</Button>
+                <Button variant="contained" type="submit">Send</Button>
             </form>
         </Paper>
 
@@ -167,9 +169,7 @@ export default function FormGetInvolved() {
             autoHideDuration={4000}
             onClose={() => setSuccessOpen(false)}
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            sx={{
-                top: '30% !important'
-            }}
+            sx={{ top: '30% !important' }}
         >
             <Alert 
                 onClose={() => setSuccessOpen(false)} 

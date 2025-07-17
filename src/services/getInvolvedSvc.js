@@ -10,12 +10,15 @@ async function submitGetInvolved(formData) {
             },
             body: JSON.stringify(formData) // object turned into json string so server understands
         });
+
+        const data = await response.json(); // parses data and looks for errors
+
         // error handling coinsides with server side so app doesn't keep running 
         if (!response.ok) {
             throw new Error("Failed to submit form");
         }
 
-        return await response.json(); // parses and returns the response
+        return data; //returns the response
 
     } catch (err) {
         console.error("submitGetInvolved error:", err);

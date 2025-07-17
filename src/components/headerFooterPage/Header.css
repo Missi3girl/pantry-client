@@ -55,7 +55,7 @@ ol {
 
 
 #footer {
-background-color: var(--green);
+    background-color: var(--green);
   /* background-image: url('../../assets/Images/footerimg3.png');
   background-repeat: no-repeat;
   background-size: contain;
