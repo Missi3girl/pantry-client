@@ -9,11 +9,11 @@ const Home = () => {
      <div id="mainHome">
       <div className="locationList">
         <h2>Find a Pantry</h2>
-          <div className="locationCard">Toco Hills Community Alliance </div>
-          <div className="locationCard">Atlanta Community Food Bank</div>
-          <div className="locationCard">Intown Cares</div>
-          <div className="locationCard">Fountain of Hope, Inc.</div>
-          <div className="locationCard">Food4Lives </div>
+          <div className="locationCard"><h3>Toco Hills Community Alliance </h3></div>
+          <div className="locationCard"><h3>Atlanta Community Food Bank</h3></div>
+          <div className="locationCard"><h3>Intown Cares</h3></div>
+          <div className="locationCard"><h3>Fountain of Hope, Inc.</h3></div>
+          <div className="locationCard"><h3>Food4Lives</h3></div>
           </div>
                 <div className="mapSection">
           <Map />
