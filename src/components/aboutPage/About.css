@@ -35,8 +35,9 @@ h2 {
 
 #story {
     padding: 0 2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
     text-indent: 5%;
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
     color: var(--grey);
     text-shadow: var(--black) 1px 0 7px;
 }

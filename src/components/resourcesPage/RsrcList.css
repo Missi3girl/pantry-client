@@ -42,7 +42,7 @@ h3 {
     font-size: 1.5em;
     text-indent: 1em;
     padding: .5em 0 ;
-    text-shadow: var(--black) 4px 0 7px;
+    text-shadow: var(--black) 2px 0 7px;
 }
 
 #resource-p {
@@ -50,6 +50,7 @@ h3 {
     font-size: 1.2em;
     text-indent: 5%;
     padding-bottom: 2em;
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
 }
 
 #resource-box {

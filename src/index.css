@@ -23,6 +23,7 @@ body {
     align-items: center;
     margin: 0;
     background-color: var(--green);
+    font-family: "mrs-eaves", serif;
 }
 
 
@@ -33,7 +34,7 @@ body {
 	color: var(--gold);
     font-size: 5em;
     margin: 0;
-    line-height: .9
+    line-height: .9;
 }
 
 #italic {
