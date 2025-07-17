@@ -119,17 +119,13 @@ export default function LoginRegForm() {
 
     return (
         <Container maxWidth="sm" sx={{ mt: 4 }}>
-            <Paper sx={{ p: 3, boxShadow: 3 }}>
-                <Typography variant="h5" component="h1" gutterBottom align="center">
-                    {mode === 'login' ? 'Login' : 'Register'}
-                </Typography>
-
+            <Paper sx={{ p: 3, boxShadow: 3 }}>  
                 <FormControl fullWidth error={!!errors.mode} sx={{ mb: 2 }}>
-                    <InputLabel id="auth-mode-label">Choose One</InputLabel>
+                    <InputLabel id="auth-mode-label">Choose Login or Regisiter</InputLabel>
                     <Select
                         labelId="auth-mode-label"
                         id="auth-mode"
-                        label="Choose One"
+                        label="Choose Login or Register"
                         value={mode}
                         onChange={handleModeChange}
                         MenuProps={{

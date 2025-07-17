@@ -158,7 +158,7 @@ export default function FormGetInvolved() {
 
                 <TextField label="Message" name="message" multiline rows={5} fullWidth value={form.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} sx={{ mb: 2 }} />
 
-                <Button variant="contained" type="submit" onClick={() => console.log("BUTTON CLICKED - onClick!")}>Send</Button>
+                <Button variant="contained" type="submit">Send</Button>
             </form>
         </Paper>
 
