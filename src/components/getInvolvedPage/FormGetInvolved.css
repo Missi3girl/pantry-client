@@ -4,16 +4,18 @@
     flex-direction: column;
     gap: .25rem;
     padding: .25rem;
+    font-size: 2em;
 }
 
-/* The Container */
+/* The Container
 .form-outer-container {
 
 }
 
-/* Input text */
+/* Input text 
 .form-get-involved .MuiInputBase-input {
 }
+*/
 
 
 /* Text Fields and Select*/
@@ -24,23 +26,19 @@
 
 /* Text Fields and Select*/
 .form-get-involved .MuiOutlinedInput-input {
-    background-color: var(--grey);
     color: var(--black);
     font-family: "mrs-eaves", serif;
 }
 
 .form-get-involved .MuiOutlinedInput-root.Mui-focused {
-    background-color: var(--green);
     color: var(--black);
     font-family: "mrs-eaves", serif;
 }
 
 
-/* Focused Border Color */
-.form-get-involved .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border: 2px solid var(--gold);
+.form-get-involved .MuiInputBase-root .MuiOutlinedInput-root {
+    
 }
-
 
 .form-get-involved .MuiTextField-root,
 .form-get-involved .MuiFormControl-root {

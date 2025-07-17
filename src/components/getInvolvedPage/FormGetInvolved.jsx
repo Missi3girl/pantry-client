@@ -92,7 +92,7 @@ export default function FormGetInvolved() {
 
   return (
     <Container maxWidth="sm">
-        <Paper sx={{ p: 3, backgroundColor: 'var(--green)' }}>
+        <Paper sx={{ p: 3}}>
             <form className="form-get-involved" onSubmit={handleSubmit}>
                 <FormControl fullWidth error={!!errors.typeOfInquiry} sx={{ mb: 2 }}>
                     <InputLabel id="typeOfInquiry-label">Select Reason</InputLabel>
