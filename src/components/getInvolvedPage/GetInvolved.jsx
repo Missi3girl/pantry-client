@@ -1,13 +1,13 @@
 // Entry point for route with imported components for the Get Involved page
 import involvedPhoto from '../../assets/Images/contact.jpeg'
 import LoginRegForm from './LoginRegForm'
-//import FormGetInvolved from './FormGetInvolved'
 
 import React from 'react'
 import './GetInvolved.css'
 
 
 export default function GetInvolved() {
+   // make a var for isAdmin and pass as a prop on line 19
   return (
  <div id="mainInvolved">
             <div className="involvedForm">
@@ -26,5 +26,3 @@ export default function GetInvolved() {
          </div>
   )
 }
-
-{/* <FormGetInvolved />   */}
