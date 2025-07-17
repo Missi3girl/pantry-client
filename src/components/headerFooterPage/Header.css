@@ -10,8 +10,18 @@ a {
     list-style-type: none;
 }
 
+p {
+        text-decoration: none;
+        font-family: "mrs-eaves", serif;
+        font-size: 2m;
+        color: var(--grey);
+        text-shadow: var(--black) 1px 0 7px;
+}
 
 #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-shadow: var(--black) 3px 0 7px;
     background-color: var(--green);
     padding: 10px;
@@ -37,21 +47,28 @@ ul {
 ol {
     justify-content: space-evenly;
     padding: 2em;
-    list-style-type: none;
+    list-style: none;
     text-decoration: none;
     align-items: right;
 }
 
+
+
 #footer {
 background-color: var(--green);
-  /*background-image: url('../../assets/Images/footerimg3.png');
+  /* background-image: url('../../assets/Images/footerimg3.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;*/
+  background-position: right; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "mrs eaves", serif;
     font-size: 1.2em;
-    flex-direction: column;
-    text-align: right;
+    padding: 1rem;
     border: 2px solid var(--gold);
+    height: 8em;
 
     > a {
         padding: 3px;
@@ -88,4 +105,42 @@ a:hover {
     font-size: 1.8em;
     text-shadow: var(--black) 3px 0 7px;
     text-decoration: dotted;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: (--grey);
+    font-family: "mrs eaves", serif;
+}
+
+.footer-sponsor-ol {
+    text-decoration: none;
+    color: (--grey);
+    font-family: "mrs eaves", serif;
+}
+
+#footer1, #footer2, #footer3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: var(--black) 1px 0 7px;
+    width: 33%;
+}
+
+#footer2 {
+    /* background-color: var(--green);
+  background-image: url('../../assets/Images/footerimg3.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right; */
+}
+
+.pLove {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    padding: 0.25em 0.5em;
 }
