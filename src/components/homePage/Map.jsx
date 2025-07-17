@@ -10,6 +10,15 @@ const Map = () => {
   const [lat, setLat] = useState(33.7550);
   const [zoom, setZoom] = useState(10);
 
+  const locations = [
+    { lng: -84.3537, lat: 33.7743 },
+    { lng: -84.3287, lat: 33.8186 },
+    { lng: -84.49421, lat: 33.66182 },
+    { lng: -84.45113182883547, lat: 33.778164832266384 },
+    { lng: -84.4247, lat: 33.8002 },
+
+  ];
+
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
@@ -24,8 +33,15 @@ const Map = () => {
       setZoom(map.getZoom().toFixed(2));
     });
 
+    locations.forEach(location => {
+      new mapboxgl.Marker()
+        .setLngLat([location.lng, location.lat])
+        .addTo(map);
+    });
+
+
     return () => map.remove();
-  }, []);
+  }, [lng, lat, zoom]);
 
   return (
     <div>
