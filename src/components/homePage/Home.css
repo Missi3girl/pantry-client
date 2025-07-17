@@ -9,7 +9,7 @@ body {
 #mainHome {
     display: flex;
     flex-direction: row;
-    height: 70vh;
+    height: 75vh;
     width: 100%;
   }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .mapSection {
-    /* border: 1px solid var(--gold); */
+    border-left: 2px solid var(--gold);
     height: 100%;
     width: 70%;
     position: relative;
@@ -46,9 +46,9 @@ body {
 }
 
   .locationCard {
-    background-color: #FFB823;
-    width: 70%;
-    padding: 50px;
+    background-color: hsla(41, 100%, 57%, .7);
+    width: 84%;
+    padding: 30px;
     border-radius: 25px;
     text-align: center;
     font-weight: bold;

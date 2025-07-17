@@ -33,8 +33,8 @@ const styles = {
   form: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
-    padding: '20px',
+    gap: '10px',
+    padding: '50px',
   },
   input: {
     padding: '8px',

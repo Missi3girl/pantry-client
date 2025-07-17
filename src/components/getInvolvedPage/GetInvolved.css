@@ -22,7 +22,15 @@
     width: 39%;
     position: relative;
     overflow: hidden;
-    border-left: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+}
+
+#pInvolved {
+    font-size: 1.3em;
+    text-indent: 5%;
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    color: var(--grey);
+    text-shadow: var(--black) 1px 0 7px;
 }
 
 h2 {
