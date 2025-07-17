@@ -34,7 +34,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '40px',
+    padding: '20px',
   },
   input: {
     padding: '8px',
