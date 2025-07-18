@@ -1,6 +1,6 @@
+//import './LoginRegForm.css' - commented out because Sam overrode form syle in her code
 import React, { useState } from 'react';
 import { registerUser, loginUser } from '../../services/authSvc';
-import { useNavigate } from 'react-router-dom';
 import {
     Container,
     TextField,
@@ -13,10 +13,9 @@ import {
     Paper,
     Snackbar,
     Alert,
-    Typography
 } from '@mui/material';
 
-export default function LoginRegForm() {
+export default function LoginRegForm({ onLogin }) {
     const [mode, setMode] = useState("login");
 
     const [form, setForm] = useState({
@@ -31,8 +30,6 @@ export default function LoginRegForm() {
     const [successOpen, setSuccessOpen] = useState(false);
     const [errorOpen, setErrorOpen] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-
-    const navigate = useNavigate();
 
     const validate = () => {
         const newErrors = {};
@@ -97,9 +94,9 @@ export default function LoginRegForm() {
             localStorage.setItem("user", JSON.stringify(response.user));
 
             if (response.user.isAdmin) {
-                navigate("/admin/dashboard");
+                onLogin(response.user);
             } else {
-                navigate("/user/dashboard");
+                onLogin(response.user);
             }
 
             setForm({
@@ -268,3 +265,9 @@ export default function LoginRegForm() {
         </Container>
     );
 }
+
+
+
+
+
+// routes for admin and user "/admin/dashboard" "/user/dashboard"
