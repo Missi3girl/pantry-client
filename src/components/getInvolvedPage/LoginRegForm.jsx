@@ -121,7 +121,7 @@ export default function LoginRegForm() {
         <Container maxWidth="sm" sx={{ mt: 4 }}>
             <Paper sx={{ p: 3, boxShadow: 3 }}>  
                 <FormControl fullWidth error={!!errors.mode} sx={{ mb: 2 }}>
-                    <InputLabel id="auth-mode-label">Choose Login or Regisiter</InputLabel>
+                    <InputLabel id="auth-mode-label">Choose Login or Register</InputLabel>
                     <Select
                         labelId="auth-mode-label"
                         id="auth-mode"
@@ -131,6 +131,14 @@ export default function LoginRegForm() {
                         MenuProps={{
                             PaperProps: {
                                 sx: {
+                                    backgroundColor: 'var(--green)',
+                                    input: {
+                                        fontFamily: '"mrs-eaves", serif',
+                                        backgroundColor: 'var(--purple)',
+                                        '::placeholder': {
+                                            color: 'var(--grey)',
+                                        }
+                                    },
                                     width: 'auto',
                                     '& .MuiMenu-list': {
                                         display: 'flex',
@@ -140,18 +148,22 @@ export default function LoginRegForm() {
                                         padding: 0
                                     },
                                     '& .MuiMenuItem-root': {
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'var(--gold)',
+                                            borderWidth:'2px',
+                                        },
                                         fontFamily: 'mrs-eaves, serif',
-                                        color: 'var(--green)',
+                                        color: 'var(--grey)',
                                         fontSize: '1.5rem',
                                         padding: '10px 16px',
                                         borderBottom: '1px solid var(--gold)',
                                         '&: last-child': {
                                             borderBottom: 'none'
-                                        },
+                                        },                                 
                                         '&:hover': {
                                             backgroundColor: '#f3e5f5',
                                             color: 'var(--purple)'
-                                        },
+                                        }
                                     },
                                 },
                             },
@@ -212,7 +224,23 @@ export default function LoginRegForm() {
                         sx={{ mb: 3 }}
                     />
 
-                    <Button variant="contained" type="submit" fullWidth>
+                    <Button   variant="contained"
+  type="submit"
+  fullWidth
+  sx={{
+    backgroundColor: 'var(--purple)',
+    border: '2px solid var(--gold)',
+    color: 'white',
+    fontFamily: '"mrs-eaves", serif',
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: '#FFB823',
+      color: 'var(--black)',
+    }
+  }}
+>
                         {mode === 'login' ? 'Login' : 'Register'}
                     </Button>
                 </form>

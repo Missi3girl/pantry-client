@@ -5,6 +5,7 @@
     background-color: var(--green);
     height: 68vh;
     width: 100%;
+    flex: 1;
 }
 
 .aboutStory {

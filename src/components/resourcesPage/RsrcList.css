@@ -8,6 +8,7 @@
     border: 3px solid var(--gold);
     height: 68vh;
     width: 100%;
+    flex: 1;
 }
 
 .resourceList {
@@ -35,6 +36,7 @@ h2 {
     padding: 0 1em;
     margin-top: 3%;
     color: var(--grey);
+    text-align: center;
 }
 
 h3 {

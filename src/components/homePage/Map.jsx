@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import './Home.css'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZDNwemMwYTA3Nngya29paGpkZGd1cTQifQ.zqgZy0q8PJVH9rA7VdSDog';
 
@@ -46,13 +47,14 @@ const Map = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '800px', paddingLeft: '2em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em' }}>
       <div className="sidebar" style={{ padding: '0.5rem' }}>
+        <h2 id="bankTitle">Find a Pantry</h2>
         <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
       </div>
       <div
         ref={mapContainerRef}
-        style={{ width: '100%', flexGrow: 1 }}
+        style={{ width: '100%', minHeight: '600px', flexGrow: 1 }}
       />
     </div>
     </div>
