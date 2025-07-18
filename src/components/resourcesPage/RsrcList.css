@@ -15,8 +15,9 @@
     float: right;
     border: 2px 1px solid var(--gold);
     height: 100%;
-    width: 60%;
+    width: 58%;
     overflow: auto;
+    padding-right: 1.2em;
 }
 
 .resourcePhoto {
