@@ -8,7 +8,7 @@ const Home = () => {
     <div className="container">
      <div id="mainHome">
       <div className="locationList">
-        <h2>Find a Pantry</h2>
+        <p id="moreInfo">Click a pantry for more information.</p>
           <div className="locationCard"><h3>Toco Hills Community Alliance </h3></div>
           <div className="locationCard"><h3>Atlanta Community Food Bank</h3></div>
           <div className="locationCard"><h3>Intown Cares</h3></div>
@@ -16,6 +16,7 @@ const Home = () => {
           <div className="locationCard"><h3>Food4Lives</h3></div>
           </div>
                 <div className="mapSection">
+                  
           <Map />
           <SearchBar /> 
                 </div>

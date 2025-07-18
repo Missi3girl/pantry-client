@@ -14,17 +14,19 @@ Our mission is to make it easier for neighbors to find, share, and support local
             </div>
             <div id="footer2">
                            <ol className="footer-ol">
-                   <li><Link to="/" className="footer-link">Find a Bank</Link></li>
+                   <li><Link to="/" className="footer-link">Find a Pantry</Link></li>
                    <li><Link to="/getinvolved" className="footer-link">Get Involved</Link></li>
-                   <li><Link to="/about" className="footer-link">About</Link></li>
+                   <li><Link to="/about" className="footer-link">About Us</Link></li>
                    <li><Link to="/resources" className="footer-link">Resources</Link></li>
+                   <li><Link to="/getinvolved" className="footer-link">Login</Link></li>
             </ol>
             </div>
             <div id="footer3">
                          <ol className="footer-sponsor-ol">
-                  <li><a href="/"  className="footer-link">Reach out for help</a></li>
-                   <li><a href="/" className="footer-link">Volunteer with us</a></li>
-                   <li><a href="/" className="footer-link">Add or update a pantry</a></li>
+                  <li><a href="/getinvolved"  className="footer-link">Reach out for help</a></li>
+                   <li><a href="/getinvolveds" className="footer-link">Volunteer with us</a></li>
+                   <li><a href="/getinvolved" className="footer-link">Add or update a pantry</a></li>
+                   <li><a href="/resources" className="footer-link">Other helpful links</a></li>
                    <li><a href="mailto:canneddocrew@gmail.com"  className="footer-link">Email us directly </a></li>
             </ol>
             </div>

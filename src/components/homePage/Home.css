@@ -36,7 +36,7 @@ body {
     height: 100%;
     width: 25%;
     overflow: auto;
-    padding-right: 1rem;
+    align-items: center;
 }
 
 .mapSection {
@@ -55,12 +55,13 @@ body {
   .locationCard {
     background-color: hsla(41, 100%, 57%, .7);
     width: 84%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 25px;
     text-align: center;
     font-weight: bold;
     color: #141A13;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    padding-left: 4px;
   }
 
     .map-box {
@@ -110,6 +111,23 @@ body {
   }
   
   
+#moreInfo {
+  text-align: center;
+  width: 100%;
+  padding-top: .6em;
+  font-size: 1.4em;
+}
+
+#bankTitle {
+    justify-content: center;
+  align-items: center;
+  width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  width: 100%;
+  padding-top: .4em;
+}
 
 
 /*    

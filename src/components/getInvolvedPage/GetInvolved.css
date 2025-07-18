@@ -28,10 +28,12 @@
 
 #pInvolved {
     font-size: 1.3em;
-    text-indent: 5%;
     font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
     color: var(--grey);
     text-shadow: var(--black) 1px 0 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
 }
 
 h2 {
@@ -39,6 +41,15 @@ h2 {
     font-size: 3em;
     padding: 0 1em;
     margin-top: 3%;
+    text-shadow: var(--black) 4px 0 7px;
+}
+
+#quote {
+    font-family: "mrs-eaves", serif;
+    font-style: italic;
+    font-size: 4em;
+    padding: 0 2em;
+    color: var(--gold);
     text-shadow: var(--black) 4px 0 7px;
 }
 
