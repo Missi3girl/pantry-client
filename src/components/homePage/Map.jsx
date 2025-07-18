@@ -46,7 +46,7 @@ const Map = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em', paddingRight: '2em' }}>
       <div className="sidebar" style={{ padding: '0.5rem' }}>
         <h2 id="bankTitle">Find a Pantry</h2>
         <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
