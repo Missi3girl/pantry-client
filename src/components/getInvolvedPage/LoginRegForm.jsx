@@ -121,7 +121,7 @@ export default function LoginRegForm() {
         <Container maxWidth="sm" sx={{ mt: 4 }}>
             <Paper sx={{ p: 3, boxShadow: 3 }}>  
                 <FormControl fullWidth error={!!errors.mode} sx={{ mb: 2 }}>
-                    <InputLabel id="auth-mode-label">Choose Login or Regisiter</InputLabel>
+                    <InputLabel id="auth-mode-label">Choose Login or Register</InputLabel>
                     <Select
                         labelId="auth-mode-label"
                         id="auth-mode"
