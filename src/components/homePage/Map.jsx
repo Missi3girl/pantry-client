@@ -45,13 +45,13 @@ const Map = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '800px', paddingLeft: '2em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em' }}>
       <div className="sidebar" style={{ padding: '0.5rem' }}>
         <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
       </div>
       <div
         ref={mapContainerRef}
-        style={{ width: '100%', flexGrow: 1 }}
+        style={{ width: '100%', minHeight: '600px', flexGrow: 1 }}
       />
     </div>
     </div>

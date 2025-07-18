@@ -7,6 +7,7 @@ import resourcePhoto from '../../assets/Images/kidpbj.jpeg'
 
 export default function RsrcList() {
   return (
+    <div className="container">
  <div id="mainResource">
             <div className="resourceList">
 
@@ -42,6 +43,7 @@ export default function RsrcList() {
                     <img src={resourcePhoto} />
                 </div>
             </div>
+         </div>
          </div>
   )
 }

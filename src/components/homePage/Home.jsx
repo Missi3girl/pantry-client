@@ -5,7 +5,7 @@ import './Home.css'
 
 const Home = () => {
   return (
-
+    <div className="container">
      <div id="mainHome">
       <div className="locationList">
         <h2>Find a Pantry</h2>
@@ -19,6 +19,7 @@ const Home = () => {
           <Map />
           <SearchBar /> 
                 </div>
+             </div>
              </div>
     );
 };

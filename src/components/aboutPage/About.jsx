@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 function About() {
   return (
+        <div className="container">
         <div id="mainAbout">
             <div className="aboutStory">
             <h2>Our Story</h2>
@@ -22,6 +23,7 @@ function About() {
                     <img src={aboutPhoto} />
                 </div>
             </div>
+         </div>
          </div>
   )
 }

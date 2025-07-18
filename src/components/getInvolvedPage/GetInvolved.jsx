@@ -9,15 +9,16 @@ import './GetInvolved.css'
 export default function GetInvolved() {
    // make a var for isAdmin and pass as a prop on line 19
   return (
- <div id="mainInvolved">
+    <div className="container">
+     <div id="mainInvolved">
             <div className="involvedForm">
             <h2>Get Involved</h2>
             <p id="pInvolved">We would love the opportunity to work with you; whether you need help, or want to help someone else!</p>
-            <p id="pInvolved">Please use the form below to login or register for a new account.</p><br /><br />
+            <p id="pInvolved">Please use the form below to login or register for a new account.</p><br />
 
             <LoginRegForm />
 
-            <br/><br/><br/>
+            <br/>
             <h3 id="quote">"No act of kindness, no matter how small, is ever wasted." ~Aesop</h3>
             </div>
             <div className="involvedPhoto">
@@ -25,6 +26,7 @@ export default function GetInvolved() {
                     <img src={involvedPhoto} />
                 </div>
             </div>
+         </div>
          </div>
   )
 }
