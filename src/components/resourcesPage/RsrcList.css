@@ -8,14 +8,16 @@
     border: 3px solid var(--gold);
     height: 68vh;
     width: 100%;
+    flex: 1;
 }
 
 .resourceList {
     float: right;
     border: 2px 1px solid var(--gold);
     height: 100%;
-    width: 60%;
+    width: 58%;
     overflow: auto;
+    padding-right: 1.2em;
 }
 
 .resourcePhoto {
@@ -35,6 +37,7 @@ h2 {
     padding: 0 1em;
     margin-top: 3%;
     color: var(--grey);
+    text-align: center;
 }
 
 h3 {

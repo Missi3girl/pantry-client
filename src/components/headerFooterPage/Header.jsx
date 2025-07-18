@@ -21,7 +21,7 @@ function Header() {
           </div>
         <div id="nav">
              <ul class="nav-ul">
-                   <li><Link to="/" className="nav-link">Find a Bank</Link></li>
+                   <li><Link to="/" className="nav-link">Find a Pantry</Link></li>
                    <li><Link to="/getinvolved" className="nav-link">Get Involved</Link></li>
                    <li><Link to="/about" className="nav-link">About</Link></li>
                    <li><Link to="/resources"className="nav-link">Resources</Link></li>
