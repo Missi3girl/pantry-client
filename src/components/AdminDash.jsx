@@ -4,17 +4,6 @@ import SimpleRestProvider from 'ra-data-simple-rest';
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
 import './AdminDash.css';
 
-const MyDashboard = () => {
-    console.log("MyDashboard is attempting to render.")
-    return (
-        <div className='hello'>
-            <h1>
-            HELLO, REACT-ADMIN DASHBOARD!
-            </h1>
-        </div>
-    )
-};
-
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
         options.headers = new Headers({ Accept: 'application/json' });
@@ -50,9 +39,8 @@ export default function AdminDash() {
     return (
         <>
             <h2>Admin Dashboard: {currentUser?.fullName}</h2>
-            <Admin dataProvider={dataProvider}>
-                basename="/admin" 
-                dashboard={MyDashboard}
+            <Admin dataProvider={dataProvider} basename="/admin">
+                <Resource name='users' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
             </Admin>
     
         </>
