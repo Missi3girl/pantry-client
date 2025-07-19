@@ -7,8 +7,10 @@ import GetInvolved from './components/getInvolvedPage/GetInvolved'
 import Home from './components/homePage/Home'
 import RsrcList from './components/resourcesPage/RsrcList'
 import SearchBar from './components/homePage/SearchBar'
-// import { ShowGuesser } from 'react-admin'
-// import { formGroupClasses } from '@mui/material'
+import AdminDash from './components/getInvolvedPage/AdminDash'
+import ProtectedRoute from './components/ProtectedRoute'
+
+
 
 function App() {
     return (
@@ -18,6 +20,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/search" element={<SearchBar />} />
                 <Route path="/getinvolved" element={<GetInvolved />} />
+                <Route element={<ProtectedRoute isAdminRequired={true} />}>
+                  <Route path="/admin/*" element={<AdminDash />} />                    
+                </Route>
                 <Route path="/about" element={<About />} />
                 <Route path="/resources" element={<RsrcList />} />
               </Routes>
@@ -26,6 +31,6 @@ function App() {
     )
 }
 
-export default App
+export default App;
 
 

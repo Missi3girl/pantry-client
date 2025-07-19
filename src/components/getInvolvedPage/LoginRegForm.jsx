@@ -1,5 +1,6 @@
 //import './LoginRegForm.css' - commented out because Sam overrode form syle in her code
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { registerUser, loginUser } from '../../services/authSvc';
 import {
     Container,
@@ -15,7 +16,9 @@ import {
     Alert,
 } from '@mui/material';
 
-export default function LoginRegForm({ onLogin }) {
+export default function LoginRegForm() {
+    const navigate = useNavigate();
+
     const [mode, setMode] = useState("login");
 
     const [form, setForm] = useState({
@@ -74,9 +77,7 @@ export default function LoginRegForm({ onLogin }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const isValid = validate();
-        if (!isValid) {
-            return;
-        }
+        if (!isValid) { return; }
 
         try {
             let response;
@@ -93,10 +94,11 @@ export default function LoginRegForm({ onLogin }) {
             localStorage.setItem("token", response.token);
             localStorage.setItem("user", JSON.stringify(response.user));
 
-            if (response.user.isAdmin) {
-                onLogin(response.user);
+            if (response.user && response.user.isAdmin) {
+                navigate('/admin'); 
             } else {
-                onLogin(response.user);
+                console.log("Logged in as non-admin user.");
+                // navigate('/user-dashboard'); // Example: if you had a separate user dashboard
             }
 
             setForm({
