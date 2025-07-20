@@ -14,6 +14,8 @@ export const PantryList = () => (
             <TextField source="hours" />
             <TextField source="requirements" />
             <TextField source="contact" /> 
+            <TextField source="lat" /> 
+            <TextField source="long" /> 
         </Datagrid>
     </List>
 );

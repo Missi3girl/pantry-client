@@ -1,12 +1,16 @@
 import React from 'react'
 import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser, fetchUtils } from 'react-admin';
 import SimpleRestProvider from 'ra-data-simple-rest';
-import { UserList } from './UserList';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 import { GetInvolvedList } from './GetInvolvedList';
 import { PantryList } from './PantryList';
-import { UserEdit } from './UserEdit';
 import { PantryEdit } from './PantryEdit';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { PantryCreate } from './PantryCreate';
+import { UserList } from './UserList';
+import { UserEdit } from './UserEdit';
+import { UserShow } from './UserShow';
+
 import './AdminDash.css';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
@@ -50,9 +54,9 @@ export default function AdminDash() {
             <>
                 <h2>Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
-                    <Resource name='users' list={UserList} edit={UserEdit} />
+                    <Resource name='users' list={UserList} edit={UserEdit} show={UserShow} />
                     <Resource name='getInvolved' list={GetInvolvedList} />
-                    <Resource name='pantries' list={PantryList} edit={PantryEdit} />
+                    <Resource name='pantries' list={PantryList} edit={PantryEdit} create={PantryCreate} />
 
                 </Admin>
         
