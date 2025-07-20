@@ -1,6 +1,7 @@
+//import './LoginRegForm.css' - commented out because Sam overrode form syle in her code
 import React, { useState } from 'react';
-import { registerUser, loginUser } from '../../services/authSvc';
 import { useNavigate } from 'react-router-dom';
+import { registerUser, loginUser } from '../../services/authSvc';
 import {
     Container,
     TextField,
@@ -13,10 +14,11 @@ import {
     Paper,
     Snackbar,
     Alert,
-    Typography
 } from '@mui/material';
 
 export default function LoginRegForm() {
+    const navigate = useNavigate();
+
     const [mode, setMode] = useState("login");
 
     const [form, setForm] = useState({
@@ -31,8 +33,6 @@ export default function LoginRegForm() {
     const [successOpen, setSuccessOpen] = useState(false);
     const [errorOpen, setErrorOpen] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-
-    const navigate = useNavigate();
 
     const validate = () => {
         const newErrors = {};
@@ -77,9 +77,7 @@ export default function LoginRegForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const isValid = validate();
-        if (!isValid) {
-            return;
-        }
+        if (!isValid) { return; }
 
         try {
             let response;
@@ -96,10 +94,11 @@ export default function LoginRegForm() {
             localStorage.setItem("token", response.token);
             localStorage.setItem("user", JSON.stringify(response.user));
 
-            if (response.user.isAdmin) {
-                navigate("/admin/dashboard");
+            if (response.user && response.user.isAdmin) {
+                navigate('/admin'); 
             } else {
-                navigate("/user/dashboard");
+                console.log("Logged in as non-admin user.");
+                // navigate('/user-dashboard'); // Example: if you had a separate user dashboard
             }
 
             setForm({
@@ -296,3 +295,9 @@ export default function LoginRegForm() {
         </Container>
     );
 }
+
+
+
+
+
+// routes for admin and user "/admin/dashboard" "/user/dashboard"
