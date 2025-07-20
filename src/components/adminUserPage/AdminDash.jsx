@@ -4,6 +4,7 @@ import SimpleRestProvider from 'ra-data-simple-rest';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import { GetInvolvedList } from './GetInvolvedList';
+import { GetinvolvedShow } from './GetInvolvedShow';
 import { PantryList } from './PantryList';
 import { PantryEdit } from './PantryEdit';
 import { PantryCreate } from './PantryCreate';
@@ -55,7 +56,7 @@ export default function AdminDash() {
                 <h2>Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
                     <Resource name='users' list={UserList} edit={UserEdit} show={UserShow} />
-                    <Resource name='getInvolved' list={GetInvolvedList} />
+                    <Resource name='getInvolved' list={GetInvolvedList} show={GetinvolvedShow}  />
                     <Resource name='pantries' list={PantryList} edit={PantryEdit} create={PantryCreate} />
 
                 </Admin>
