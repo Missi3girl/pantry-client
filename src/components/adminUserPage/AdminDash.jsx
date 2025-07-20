@@ -1,8 +1,14 @@
 import React from 'react'
 import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser, fetchUtils } from 'react-admin';
 import SimpleRestProvider from 'ra-data-simple-rest';
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+import { UserList } from './UserList';
+import { GetinvolvedList } from './GetInvolvedList';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './AdminDash.css';
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+
+const theme = createTheme();
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -37,12 +43,15 @@ export default function AdminDash() {
     console.log("AdminDash is running for user:", currentUser);
 
     return (
-        <>
-            <h2>Admin Dashboard: {currentUser?.fullName}</h2>
-            <Admin dataProvider={dataProvider} basename="/admin">
-                <Resource name='users' list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
-            </Admin>
-    
-        </>
+        <ThemeProvider theme={theme}>
+            <>
+                <h2>Admin Dashboard: {currentUser?.fullName}</h2>
+                <Admin dataProvider={dataProvider} basename="/admin">
+                    <Resource name='users' list={UserList} />
+                    <Resource name='getInvolved' list={GetinvolvedList} />
+                </Admin>
+        
+            </>        
+        </ThemeProvider>
     );
 }
