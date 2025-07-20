@@ -27,7 +27,7 @@ function Home() {
         </div>
         <div className="mapSection">
           <Map />
-          <SearchBar />
+          
         </div>
       </div>
     </div>
