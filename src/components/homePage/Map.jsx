@@ -98,7 +98,7 @@ const Map = () => {
         <SearchBar onSearch={findClosestPantry} /> {/* Search bar added */}
         <div
           ref={mapContainerRef}
-          style={{ width: '100%', minHeight: '600px', flexGrow: 1 }}
+          style={{ width: '90%', minHeight: '500px', flexGrow: 1 }}
         />
         <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
 
