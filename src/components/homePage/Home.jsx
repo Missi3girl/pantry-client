@@ -31,7 +31,7 @@ function Home() {
     <div className="container">
       <div id="mainHome">
         <div className="locationList">
-          <p id="moreInfo">Click a pantry for more information.</p>
+          <p id="moreInfo">Click a pantry to locate on the map</p>
           {pantries.map((pantry) => (
             <PantryCard
               key={pantry._id}
