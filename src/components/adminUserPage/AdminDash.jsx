@@ -2,7 +2,9 @@ import React from 'react'
 import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser, fetchUtils } from 'react-admin';
 import SimpleRestProvider from 'ra-data-simple-rest';
 import { UserList } from './UserList';
-import { GetinvolvedList } from './GetInvolvedList';
+import { GetInvolvedList } from './GetInvolvedList';
+import { PantryList } from './PantryList';
+import { UserEdit } from './UserEdit';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './AdminDash.css';
 
@@ -47,8 +49,10 @@ export default function AdminDash() {
             <>
                 <h2>Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
-                    <Resource name='users' list={UserList} />
-                    <Resource name='getInvolved' list={GetinvolvedList} />
+                    <Resource name='users' list={UserList} edit={UserEdit} />
+                    <Resource name='getInvolved' list={GetInvolvedList} edit={EditGuesser} />
+                    <Resource name='pantries' list={PantryList} />
+
                 </Admin>
         
             </>        

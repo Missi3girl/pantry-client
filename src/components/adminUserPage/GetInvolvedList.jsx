@@ -1,6 +1,6 @@
 import { Datagrid, DateField, EmailField, List, TextField } from 'react-admin';
 
-export const GetinvolvedList = () => (
+export const GetInvolvedList = () => (
     <List>
         <Datagrid>
             <TextField source="fullName" />
