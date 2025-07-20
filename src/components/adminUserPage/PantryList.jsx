@@ -1,5 +1,7 @@
 import { Datagrid, List, TextField } from 'react-admin';
 
+import "./AdminDash.css";
+
 export const PantryList = () => (
     <List>
         <Datagrid rowClick="edit"> 

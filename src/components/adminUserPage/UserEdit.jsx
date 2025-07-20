@@ -2,9 +2,11 @@ import {
     BooleanInput,
     Edit,
     SimpleForm,
-    TextField, // Added TextField for read-only ID display
+    TextField, 
     TextInput
 } from 'react-admin';
+
+import "./AdminDash.css";
 
 export const UserEdit = () => (
     <Edit>
@@ -16,7 +18,7 @@ export const UserEdit = () => (
             <TextInput source="email" />
             <BooleanInput source="isAdmin" />
 
-            {/*
+            {/*  ---FUTURE DATA HANDLING---
                 If your User model has 'createdAt' and 'updatedAt' from timestamps: true,
                 you might want to display them as read-only dates:
             */}
@@ -30,6 +32,7 @@ export const UserEdit = () => (
                   and ensure your backend only updates the password if this field is provided and hashed.
                   You would typically not display the existing hashed password.
             */}
+            
         </SimpleForm>
     </Edit>
 );

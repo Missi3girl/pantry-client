@@ -1,5 +1,13 @@
 import { useMediaQuery } from "@mui/material";
-import { BooleanField, Datagrid, TextField, EmailField, List, SimpleList } from 'react-admin';
+import { 
+    BooleanField, 
+    Datagrid, 
+    TextField, 
+    EmailField, 
+    List, 
+    SimpleList 
+} from 'react-admin';
+
 import "./AdminDash.css";
 
 export const UserList = () => {

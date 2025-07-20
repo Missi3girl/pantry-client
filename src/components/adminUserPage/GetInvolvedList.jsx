@@ -1,4 +1,12 @@
-import { Datagrid, DateField, EmailField, List, TextField } from 'react-admin';
+import { 
+    Datagrid, 
+    DateField, 
+    EmailField, 
+    List, 
+    TextField 
+} from 'react-admin';
+
+import "./AdminDash.css";
 
 export const GetInvolvedList = () => (
     <List>

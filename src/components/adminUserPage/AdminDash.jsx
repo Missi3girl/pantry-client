@@ -5,6 +5,7 @@ import { UserList } from './UserList';
 import { GetInvolvedList } from './GetInvolvedList';
 import { PantryList } from './PantryList';
 import { UserEdit } from './UserEdit';
+import { PantryEdit } from './PantryEdit';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './AdminDash.css';
 
@@ -50,8 +51,8 @@ export default function AdminDash() {
                 <h2>Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
                     <Resource name='users' list={UserList} edit={UserEdit} />
-                    <Resource name='getInvolved' list={GetInvolvedList} edit={EditGuesser} />
-                    <Resource name='pantries' list={PantryList} />
+                    <Resource name='getInvolved' list={GetInvolvedList} />
+                    <Resource name='pantries' list={PantryList} edit={PantryEdit} />
 
                 </Admin>
         
