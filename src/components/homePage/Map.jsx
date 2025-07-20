@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZDNwemMwYTA3Nngya29paGpkZGd1cTQifQ.zqgZy0q8PJVH9rA7VdSDog';
 
-const Map = () => {
+const Map = ({ selectedPantry, onMarkerClick }) => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
 
@@ -15,7 +15,6 @@ const Map = () => {
   const [lat, setLat] = useState(33.7550);
   const [zoom, setZoom] = useState(10);
   const [locations, setLocations] = useState([]);
-  
 
   useEffect(() => {
     fetch('http://localhost:4000/api/pantries')
@@ -23,7 +22,8 @@ const Map = () => {
       .then((data) => {
         const mappedLocations = data.map(pantry => ({
           lng: pantry.lng,
-          lat: pantry.lat
+          lat: pantry.lat,
+          _id: pantry._id,
         }));
         setLocations(mappedLocations);
       })
@@ -45,19 +45,27 @@ const Map = () => {
     });
 
     return () => mapRef.current.remove();
-  }, []); // Initial map setup, runs only once
+  }, []); // stops the repeating
 
   useEffect(() => {
     if (!mapRef.current || locations.length === 0) return;
 
     locations.forEach((location) => {
-      new mapboxgl.Marker({
-        color: 'var(--gold)',
+      const markerColor = location._id === selectedPantry ? 'purple' : 'gold';
+      const marker = new mapboxgl.Marker({
+        color: markerColor,
       })
         .setLngLat([location.lng, location.lat])
         .addTo(mapRef.current);
+
+      marker.getElement().addEventListener('click', () => {
+        // Update the selected pantry when marker is clicked
+        onMarkerClick(location);
+        // Center the map on the clicked marker
+        mapRef.current.flyTo({ center: [location.lng, location.lat], zoom: 14 });
+      });
     });
-  }, [locations]);
+  }, [locations, selectedPantry, onMarkerClick]); // Re-run when locations or selectedPantry change
 
   // Function to search for the pantry by zip code
   const findClosestPantry = async (zipCode) => {
@@ -93,7 +101,6 @@ const Map = () => {
       <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em', paddingRight: '2em' }}>
         <div className="sidebar" style={{ padding: '0.5rem' }}>
           <h2 id="bankTitle">Find a Pantry</h2>
-      
         </div>
         <SearchBar onSearch={findClosestPantry} /> {/* Search bar added */}
         <div
@@ -101,7 +108,6 @@ const Map = () => {
           style={{ width: '90%', minHeight: '500px', flexGrow: 1 }}
         />
         <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
-
       </div>
     </div>
   );

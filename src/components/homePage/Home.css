@@ -28,15 +28,17 @@ body {
     padding: 20px;
 }
 
-.locationList{
-    border: 2px 1px solid var(--gold);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    height: 100%;
-    width: 25%;
-    overflow: auto;
-    align-items: center;
+.locationList {
+  border: 2px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 700px; /* Adjust the height to show exactly 3 cards */
+  width: 25%;
+  overflow-y: auto; /* Enable vertical scrolling if there are more than 3 cards */
+  align-items: center;
+  padding: 1rem;
+  position: relative;
 }
 
 .mapSection {
