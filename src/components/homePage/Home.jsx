@@ -1,31 +1,37 @@
-import React from 'react';
-import Map from './Map'; 
+import React, { useEffect, useState } from 'react';
+import PantryCard from './PantryCard';
+import Map from './Map';
 import SearchBar from './SearchBar';
-import './Home.css'
+import './Home.css';
 
-const Home = () => {
+function Home() {
+  const [pantries, setPantries] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/api/pantries') 
+      .then((res) => res.json())
+      .then((data) => setPantries(data))
+        
+      .catch((err) => console.error('Error fetching pantries:', err));
+  }, []);
+
+  
   return (
     <div className="container">
-     <div id="mainHome">
-      <div className="locationList">
-        <p id="moreInfo">Click a pantry for more information.</p>
-          <div className="locationCard"><h3>Toco Hills Community Alliance </h3></div>
-          <div className="locationCard"><h3>Atlanta Community Food Bank</h3></div>
-          <div className="locationCard"><h3>Intown Cares</h3></div>
-          <div className="locationCard"><h3>Fountain of Hope, Inc.</h3></div>
-          <div className="locationCard"><h3>Food4Lives</h3></div>
-          </div>
-                <div className="mapSection">
-                  
+      <div id="mainHome">
+        <div className="locationList">
+          <p id="moreInfo">Click a pantry for more information.</p>
+          {pantries.map((pantry) => (
+            <PantryCard key={pantry._id} pantry={pantry} />
+          ))}
+        </div>
+        <div className="mapSection">
           <Map />
-          <SearchBar /> 
-                </div>
-             </div>
-             </div>
-    );
-};
-
-
-
+          <SearchBar />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Home;
