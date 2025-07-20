@@ -93,13 +93,15 @@ const Map = () => {
       <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em', paddingRight: '2em' }}>
         <div className="sidebar" style={{ padding: '0.5rem' }}>
           <h2 id="bankTitle">Find a Pantry</h2>
-          {/* <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p> */}
+      
         </div>
         <SearchBar onSearch={findClosestPantry} /> {/* Search bar added */}
         <div
           ref={mapContainerRef}
           style={{ width: '100%', minHeight: '600px', flexGrow: 1 }}
         />
+        <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
+
       </div>
     </div>
   );
