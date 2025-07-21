@@ -58,7 +58,7 @@ const Map = ({ selectedPantry, onMarkerClick }) => {
     markersRef.current = [];
 
     locations.forEach((location) => {
-      // Ensure valid coordinates
+      // Ensure valid coordinates on mongo
       if (isNaN(location.lng) || isNaN(location.lat)) {
         console.error(`Invalid coordinates for pantry with ID: ${location._id}`);
         return;
