@@ -5,7 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './Home.css';
 import SearchBar from './SearchBar';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZGNnanFpNTBiZmQybXB0ZGc0MDM5N3MifQ.133WS_o5Fa2HjK8ygpoi_g';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZGNpd2FhcDE5NWQyaXB6eTI5NzhhbzQifQ.tKcPGkwXMJC3Id3b_09fhQ';
 
 const Map = ({ selectedPantry, onMarkerClick }) => {
   const mapContainerRef = useRef(null);
