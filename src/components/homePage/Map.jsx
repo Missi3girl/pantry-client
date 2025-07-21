@@ -122,7 +122,7 @@ const Map = ({ selectedPantry, onMarkerClick }) => {
           ref={mapContainerRef}
           style={{ width: '90%', minHeight: '500px', flexGrow: 1 }}
         />
-        <p id="longlat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
+        <p id="lnglat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
       </div>
     </div>
   );
