@@ -1,10 +1,21 @@
-import { Datagrid, List, TextField } from 'react-admin';
+import { 
+    Datagrid, 
+    List, 
+    TextField,
+    TextInput,
+    ReferenceInput
+} from 'react-admin';
 
 import "./AdminDash.css";
 
+const pantryFilters = [
+    <TextInput source="q" label="Search" alwaysOn />,
+    <ReferenceInput source="userId" label="User" reference="users" />
+];
+
 export const PantryList = () => (
-    <List>
-        <Datagrid rowClick="edit"> 
+    <List filters={pantryFilters}>
+        <Datagrid> 
             <TextField source="id" />
             <TextField source="pantryName" />
             <TextField source="address" />

@@ -3,18 +3,29 @@ import {
     DateField, 
     EmailField, 
     List, 
-    TextField 
+    TextField,
+    TextInput,
+    ReferenceInput,
+    FunctionField
 } from 'react-admin';
 
 import "./AdminDash.css";
 
+const getInvolvedFilters = [
+    <TextInput source="q" label="Search" alwaysOn />,
+    <ReferenceInput source="userId" label="User" reference="users" />
+];
+
 export const GetInvolvedList = () => (
-    <List>
+    <List filters={getInvolvedFilters}>
         <Datagrid>
             <TextField source="fullName" />
             <TextField source="phoneNumber" />
             <EmailField source="email" />
-            <TextField source="message" />
+            <FunctionField 
+                label="Exerpt of Email" 
+                render={(record) => `${record.message.substring(0, 20)}...`} 
+            />
             <TextField source="typeOfInquiry" />
             <DateField source="date" />
             <TextField source="id" />

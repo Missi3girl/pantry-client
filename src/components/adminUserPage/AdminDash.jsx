@@ -8,9 +8,14 @@ import { GetinvolvedShow } from './GetInvolvedShow';
 import { PantryList } from './PantryList';
 import { PantryEdit } from './PantryEdit';
 import { PantryCreate } from './PantryCreate';
+import { PantryShow } from './PantryShow';
 import { UserList } from './UserList';
 import { UserEdit } from './UserEdit';
 import { UserShow } from './UserShow';
+
+import UserIcon from '@mui/icons-material/Group';
+import FoodBankIcon from '@mui/icons-material/FoodBank';
+import EmailIcon from '@mui/icons-material/Email';
 
 import './AdminDash.css';
 
@@ -55,10 +60,31 @@ export default function AdminDash() {
             <>
                 <h2>Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
-                    <Resource name='users' list={UserList} edit={UserEdit} show={UserShow} />
-                    <Resource name='getInvolved' list={GetInvolvedList} show={GetinvolvedShow}  />
-                    <Resource name='pantries' list={PantryList} edit={PantryEdit} create={PantryCreate} show={ShowGuesser}/>
-
+                    <Resource 
+                        name='users' 
+                        list={UserList} 
+                        show={UserShow} 
+                        edit={UserEdit}
+                        icon={UserIcon}
+                        options={{ label: 'Users' }} 
+                    />
+                    <Resource 
+                        name='pantries' 
+                        list={PantryList} 
+                        show={PantryShow}
+                        edit={PantryEdit} 
+                        create={PantryCreate}
+                        icon={FoodBankIcon}
+                        options={{ label: 'Pantries' }} 
+                    />
+                    <Resource 
+                        name='getInvolved' 
+                        list={GetInvolvedList} 
+                        show={GetinvolvedShow}
+                        icon={EmailIcon}
+                        options={{ label: 'Email Submissions' }}  
+                    />
+                    
                 </Admin>
         
             </>        
