@@ -6,7 +6,7 @@ import {
     TextField 
 } from 'react-admin';
 
-import './AdminDash.css';
+import './AdminShow.css';
 
 export const UserShow = () => (
     <Show>

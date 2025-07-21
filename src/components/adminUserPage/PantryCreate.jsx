@@ -1,6 +1,6 @@
 import { Create, SimpleForm, TextInput } from "react-admin";
 
-import './AdminDash.css';
+import './AdminCreate.css';
 
 export const PantryCreate = () => (
     <Create>

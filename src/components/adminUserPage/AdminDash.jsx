@@ -57,7 +57,7 @@ export default function AdminDash() {
                 <Admin dataProvider={dataProvider} basename="/admin">
                     <Resource name='users' list={UserList} edit={UserEdit} show={UserShow} />
                     <Resource name='getInvolved' list={GetInvolvedList} show={GetinvolvedShow}  />
-                    <Resource name='pantries' list={PantryList} edit={PantryEdit} create={PantryCreate} />
+                    <Resource name='pantries' list={PantryList} edit={PantryEdit} create={PantryCreate} show={ShowGuesser}/>
 
                 </Admin>
         

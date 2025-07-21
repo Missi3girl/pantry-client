@@ -1,6 +1,6 @@
 import { Edit, SimpleForm, TextInput, TextField } from 'react-admin';
 
-import './AdminDash.css';
+import './AdminEdit.css';
 
 export const PantryEdit = () => (
     <Edit>

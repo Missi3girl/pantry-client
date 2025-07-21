@@ -6,7 +6,7 @@ import {
     TextInput
 } from 'react-admin';
 
-import "./AdminDash.css";
+import "./AdminEdit.css";
 
 export const UserEdit = () => (
     <Edit>
