@@ -117,7 +117,7 @@ body {
   .search-bar button {
     padding: 8px 16px;
     background-color: var(--purple);
-    color: white;
+    color: rgb(232, 220, 220);
     border: none;
     border-radius: 5px;
     cursor: pointer;
