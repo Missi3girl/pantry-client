@@ -1,5 +1,3 @@
-// !This will go inside the user dashboard
-
 import { useState } from 'react';
 import { submitGetInvolved } from '../../services/getInvolvedSvc';
 import './FormGetInvolved.css';

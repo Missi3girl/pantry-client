@@ -185,7 +185,14 @@ export default function LoginRegForm() {
                                 onChange={handleChange}
                                 error={!!errors.fullName}
                                 helperText={errors.fullName}
-                                sx={{ mb: 2 }}
+                                sx={{ 
+                                    mb: 2, 
+                                    '& .MuiInputBase-input': { 
+                                        fontFamily: '"mrs-eaves", serif',
+                                        fontSize: '1.5rem', 
+                                        color: 'var(--purple)', 
+                                    }
+                                }} 
                             />
                             <TextField
                                 label="Zip Code"
@@ -195,7 +202,14 @@ export default function LoginRegForm() {
                                 onChange={handleChange}
                                 error={!!errors.zipCode}
                                 helperText={errors.zipCode}
-                                sx={{ mb: 2 }}
+                                sx={{ 
+                                    mb: 2, 
+                                    '& .MuiInputBase-input': { 
+                                        fontFamily: '"mrs-eaves", serif',
+                                        fontSize: '1.5rem', 
+                                        color: 'var(--purple)', 
+                                    }
+                                }} 
                             />
                         </>
                     )}
@@ -209,7 +223,14 @@ export default function LoginRegForm() {
                         onChange={handleChange}
                         error={!!errors.email}
                         helperText={errors.email}
-                        sx={{ mb: 2 }}
+                        sx={{ 
+                            mb: 2, 
+                            '& .MuiInputBase-input': { 
+                                fontFamily: '"mrs-eaves", serif',
+                                fontSize: '1.5rem', 
+                                color: 'var(--purple)', 
+                            }
+                        }} 
                     />
                     <TextField
                         label="Password"
@@ -220,26 +241,34 @@ export default function LoginRegForm() {
                         onChange={handleChange}
                         error={!!errors.password}
                         helperText={errors.password}
-                        sx={{ mb: 3 }}
+                        sx={{ 
+                            mb: 2, 
+                            '& .MuiInputBase-input': { 
+                                fontFamily: '"mrs-eaves", serif',
+                                fontSize: '1.5rem', 
+                                color: 'var(--purple)', 
+                            }
+                        }} 
                     />
 
-                    <Button   variant="contained"
-  type="submit"
-  fullWidth
-  sx={{
-    backgroundColor: 'var(--purple)',
-    border: '2px solid var(--gold)',
-    color: 'white',
-    fontFamily: '"mrs-eaves", serif',
-    fontWeight: 'bold',
-    fontSize: '1.2rem',
-    textTransform: 'none',
-    '&:hover': {
-      backgroundColor: '#FFB823',
-      color: 'var(--black)',
-    }
-  }}
->
+                    <Button   
+                        variant="contained"
+                        type="submit"
+                        fullWidth
+                        sx={{
+                            backgroundColor: 'var(--purple)',
+                            border: '2px solid var(--gold)',
+                            color: 'white',
+                            fontFamily: '"mrs-eaves", serif',
+                            fontWeight: 'bold',
+                            fontSize: '1.5rem',
+                            textTransform: 'none',
+                            '&:hover': {
+                            backgroundColor: '#FFB823',
+                            color: 'var(--black)',
+                            }
+                        }}
+                    >
                         {mode === 'login' ? 'Login' : 'Register'}
                     </Button>
                 </form>
