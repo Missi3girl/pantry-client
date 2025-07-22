@@ -91,7 +91,6 @@ export default function FormGetInvolved() {
     };
 
     console.log("Component Render - Current errors state:", errors);
-    console.log("Component Render - errors.fullName:", errors.fullName);
 
   return (
     <Container maxWidth="sm">
@@ -160,7 +159,13 @@ export default function FormGetInvolved() {
                     onChange={handleChange} 
                     error={!!errors.fullName} 
                     helperText={errors.fullName} 
-                    sx={{ mb: 2 }} 
+                    sx={{ 
+                        mb: 2, 
+                        '& .MuiInputBase-input': { // Styles for the actual typed text
+                            fontSize: '1.5rem', // Change this value as desired
+                            color: 'var(--purple)', // Example: to match your theme
+                        }
+                    }} 
                 />
 
                 <TextField 
@@ -171,7 +176,13 @@ export default function FormGetInvolved() {
                     onChange={handleChange} 
                     error={!!errors.email}
                     helperText={errors.email} 
-                    sx={{ mb: 2 }} 
+                    sx={{ 
+                        mb: 2, 
+                        '& .MuiInputBase-input': { // Styles for the actual typed text
+                            fontSize: '1.5rem', // Change this value as desired
+                            color: 'var(--purple)', // Example: to match your theme
+                        }
+                    }} 
                 />
 
                 <TextField 
@@ -183,7 +194,13 @@ export default function FormGetInvolved() {
                     inputProps={{ pattern: "\\d{10}" }} 
                     error={!!errors.phoneNumber} 
                     helperText={errors.phoneNumber} 
-                    sx={{ mb: 2 }} 
+                    sx={{ 
+                        mb: 2, 
+                        '& .MuiInputBase-input': { // Styles for the actual typed text
+                            fontSize: '1.5rem', // Change this value as desired
+                            color: 'var(--purple)', // Example: to match your theme
+                        }
+                    }} 
                 />
 
                 <TextField 
@@ -196,7 +213,13 @@ export default function FormGetInvolved() {
                     onChange={handleChange} 
                     error={!!errors.message} 
                     helperText={errors.message} 
-                    sx={{ mb: 2 }} 
+                    sx={{ 
+                        mb: 2, 
+                        '& .MuiInputBase-input': { // Styles for the actual typed text
+                            fontSize: '1.5rem', // Change this value as desired
+                            color: 'var(--purple)', // Example: to match your theme
+                        }
+                    }} 
                 />
 
                 <Button variant="contained" type="submit">Send</Button>
