@@ -14,12 +14,10 @@ function Home() {
       .catch((err) => console.error('Error fetching pantries:', err));
   }, []);
 
-  const handlePantryClick = (pantry) => {
-    setSelectedPantry(pantry); // Update the selected pantry when a card is clicked
-  };
 
-  const handleMarkerClick = (pantry) => {
+  const handlePantryClick = (pantry) => {
     setSelectedPantry(pantry); // Update the selected pantry when a map marker is clicked
+    
     // Scroll the pantry card into view
     const element = document.getElementById(pantry._id);
     if (element) {
@@ -63,9 +61,8 @@ function Home() {
         </div>
         <div className="mapSection">
           <Map
-            selectedPantry={selectedPantry}
             pantries={pantries}
-            onMarkerClick={handleMarkerClick} 
+            setSelectedPantry={setSelectedPantry}
           />
         </div>
        </div>{popUp()}
