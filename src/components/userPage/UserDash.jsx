@@ -29,6 +29,7 @@ function UserDash() {
             console.log("No user data found in localStorage, redirectin to login.");
             navigate("/getinvolved");
        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleLogout = () => {
