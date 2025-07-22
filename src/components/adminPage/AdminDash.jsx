@@ -57,8 +57,9 @@ export default function AdminDash() {
 
     return (
         <ThemeProvider theme={theme}>
-            <>
-                <h2>Admin Dashboard: {currentUser?.fullName}</h2>
+            <div className="mainAdmin">
+            <div className="adminContainer">
+                <h2 className="adminTitle">Admin Dashboard: {currentUser?.fullName}</h2>
                 <Admin dataProvider={dataProvider} basename="/admin">
                     <Resource 
                         name='users' 
@@ -87,7 +88,7 @@ export default function AdminDash() {
                     
                 </Admin>
         
-            </>        
+            </div></div>        
         </ThemeProvider>
     );
 }

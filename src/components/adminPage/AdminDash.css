@@ -18,3 +18,34 @@
     height: '100vh'; 
     z-index: 9999    
 } */
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    background-color: var(--green);
+}
+
+.mainAdmin {
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-y: auto;
+}
+
+.adminContainer {
+    height: 100%;
+    width: 100%;
+    /* overflow-y: auto; */
+    margin: 0 auto;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.adminTitle{
+ font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    font-size: 3em;
+    padding: 0 1em;
+    margin-top: 3%;
+    text-shadow: var(--black) 4px 0 7px;
+}
