@@ -1,9 +1,7 @@
 import { 
     Datagrid, 
     List, 
-    TextField,
-    TextInput,
-    ReferenceInput
+    TextField
 } from 'react-admin';
 
 import "./AdminDash.css";
