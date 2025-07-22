@@ -4,7 +4,7 @@ import './Home.css';
 function PantryCard({ pantry, onClick, isSelected }) {
   return (
     <div
-      className={`locationCard ${isSelected ? 'selected' : ''}`} 
+      className={`locationCard ${isSelected ? 'highlighted' : ''}`} 
       onClick={onClick}
       id={pantry._id} // Use the pantry ID as the element ID for scrolling
     >

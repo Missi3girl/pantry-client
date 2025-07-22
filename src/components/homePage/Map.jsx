@@ -13,25 +13,7 @@ const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
   const [lng, setLng] = useState(-84.3733);
   const [lat, setLat] = useState(33.7550);
   const [zoom, setZoom] = useState(10);
-  // const [locations, setLocations] = useState([]);
   const markersRef = useRef([]); 
-
-  // Fetch pantry locations
-  // useEffect(() => {
-  //   fetch('http://localhost:4000/api/pantries')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const mappedLocations = data.map(pantry => ({
-  //         lng: pantry.lng,
-  //         lat: pantry.lat,
-  //         _id: pantry._id,
-  //       }));
-  //       setLocations(mappedLocations);
-  //     })
-  //     .catch((err) => console.error('Error loading pantry locations:', err));
-  // }, []);
-
-  // Initialize map
   
   useEffect(() => {
     mapRef.current = new mapboxgl.Map({
@@ -65,7 +47,8 @@ const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
         return;
       }
 
-      const markerColor = pantry._id === selectedPantry ? 'purple' : 'gold';
+      const markerColor = 
+      selectedPantry && pantry._id === selectedPantry._id ? 'purple' : 'gold';
       const marker = new mapboxgl.Marker({
         color: markerColor,
       })
@@ -82,6 +65,20 @@ const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
       });
     });
   }, [pantries, selectedPantry]); 
+
+
+  // Moving map to selected pantry if changed by click
+  useEffect(() => {
+    if (!selectedPantry || !mapRef.current) return;
+
+    if (!isNaN(selectedPantry.lng) && !isNaN(selectedPantry.lat)) {
+      mapRef.current.flyTo({
+        center: [selectedPantry.lng, selectedPantry.lat],
+        zoom: 14,
+        essential: true,
+      });
+    }
+  }, [selectedPantry]);
 
   // Function to search for the pantry by zip code
   const findClosestPantry = async (zipCode) => {
@@ -121,7 +118,7 @@ const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
         <SearchBar onSearch={findClosestPantry} /> {/* Search bar added */}
         <div
           ref={mapContainerRef}
-          style={{ width: '90%', minHeight: '500px', flexGrow: 1 }}
+          style={{ width: '90%', minHeight: '600px', flexGrow: 1 }}
         />
         <p id="lnglat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
       </div>

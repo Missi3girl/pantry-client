@@ -62,6 +62,7 @@ function Home() {
         <div className="mapSection">
           <Map
             pantries={pantries}
+            selectedPantry={selectedPantry}
             setSelectedPantry={setSelectedPantry}
           />
         </div>

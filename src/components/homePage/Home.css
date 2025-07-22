@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 700px; 
+  height: 54em; 
   width: 25%;
   overflow-y: auto; 
   align-items: center;
@@ -68,14 +68,15 @@ body {
   .popContainer {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: 0;
+    width: 400px;
     height: 100vh;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     z-index: 9999;
+    pointer-events: auto;
   }
 
   .popFilling {
@@ -85,9 +86,11 @@ body {
     max-width: 500px;
     width: 90%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        pointer-events: auto;
 
     > h2 {
       color: var(--gold);
+      font-size: 2em;
     }
   }
 
