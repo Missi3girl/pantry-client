@@ -7,31 +7,32 @@ import SearchBar from './SearchBar';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZGNpd2FhcDE5NWQyaXB6eTI5NzhhbzQifQ.tKcPGkwXMJC3Id3b_09fhQ';
 
-const Map = ({ selectedPantry, onMarkerClick }) => {
+const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const [lng, setLng] = useState(-84.3733);
   const [lat, setLat] = useState(33.7550);
   const [zoom, setZoom] = useState(10);
-  const [locations, setLocations] = useState([]);
+  // const [locations, setLocations] = useState([]);
   const markersRef = useRef([]); 
 
   // Fetch pantry locations
-  useEffect(() => {
-    fetch('http://localhost:4000/api/pantries')
-      .then((res) => res.json())
-      .then((data) => {
-        const mappedLocations = data.map(pantry => ({
-          lng: pantry.lng,
-          lat: pantry.lat,
-          _id: pantry._id,
-        }));
-        setLocations(mappedLocations);
-      })
-      .catch((err) => console.error('Error loading pantry locations:', err));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/api/pantries')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const mappedLocations = data.map(pantry => ({
+  //         lng: pantry.lng,
+  //         lat: pantry.lat,
+  //         _id: pantry._id,
+  //       }));
+  //       setLocations(mappedLocations);
+  //     })
+  //     .catch((err) => console.error('Error loading pantry locations:', err));
+  // }, []);
 
   // Initialize map
+  
   useEffect(() => {
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
@@ -51,24 +52,24 @@ const Map = ({ selectedPantry, onMarkerClick }) => {
 
   // Create markers and handle marker click
   useEffect(() => {
-    if (!mapRef.current || locations.length === 0) return;
+    if (!mapRef.current || pantries.length === 0) return;
 
     // Clean up previous markers
     markersRef.current.forEach(marker => marker.remove());
     markersRef.current = [];
 
-    locations.forEach((location) => {
+      pantries.forEach((pantry) => {
       // Ensure valid coordinates on mongo
-      if (isNaN(location.lng) || isNaN(location.lat)) {
-        console.error(`Invalid coordinates for pantry with ID: ${location._id}`);
+      if (isNaN(pantry.lng) || isNaN(pantry.lat)) {
+        console.error(`Invalid coordinates for pantry with ID: ${pantry._id}`);
         return;
       }
 
-      const markerColor = location._id === selectedPantry ? 'purple' : 'gold';
+      const markerColor = pantry._id === selectedPantry ? 'purple' : 'gold';
       const marker = new mapboxgl.Marker({
         color: markerColor,
       })
-        .setLngLat([location.lng, location.lat])
+        .setLngLat([pantry.lng, pantry.lat])
         .addTo(mapRef.current);
 
       // Add marker to the marker reference array
@@ -76,11 +77,11 @@ const Map = ({ selectedPantry, onMarkerClick }) => {
 
       // Event listener for click
       marker.getElement().addEventListener('click', () => {
-        onMarkerClick(location);
-        mapRef.current.flyTo({ center: [location.lng, location.lat], zoom: 14 });
+        setSelectedPantry(pantry);
+        mapRef.current.flyTo({ center: [pantry.lng, pantry.lat], zoom: 14 });
       });
     });
-  }, [locations, selectedPantry, onMarkerClick]); 
+  }, [pantries, selectedPantry]); 
 
   // Function to search for the pantry by zip code
   const findClosestPantry = async (zipCode) => {
