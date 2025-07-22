@@ -53,19 +53,19 @@ function UserDash() {
                 boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
                 fontFamily: 'Arial, sans-serif',
                 backgroundColor: '#ffffff'
-            }}>
+                }}>
                 <h1 style={{ color: 'var(--black)', marginBottom: '25px', textAlign: 'center' }}>
                     Welcome, {currentUser.fullName}!
                 </h1>
                 
 
                 <div style={{
-                    backgroundColor: 'var(--purple)',
-                    padding: '20px',
-                    borderRadius: '8px',
-                    marginBottom: '30px',
-                    borderLeft: '4px solid var(--gold)'
-                }}>
+                        backgroundColor: 'var(--purple)',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        marginBottom: '30px',
+                        borderLeft: '4px solid var(--gold)'
+                    }}>
                     <h3 style={{ color: 'var(--grey)', marginBottom: '15px' }}>Your Information:</h3>
                     <p style={{ color: 'var(--grey)' }}><strong>Full Name:</strong> {currentUser.fullName}</p>
                     <p><strong>Email:</strong> {currentUser.email}</p>
@@ -92,10 +92,31 @@ function UserDash() {
                     }}>
                     Logout
                 </button>
+
+                <button
+                    /* onClick={handleEdit} */
+                    style={{
+                       display: 'block',
+                        width: '150px',
+                        margin: '20px auto',
+                        padding: '12px 25px',
+                        backgroundColor: 'var(--green)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        fontSize: '1em',
+                        fontWeight: 'bold',
+                        transition: 'background-color 0.3s ease' 
+                    }}>
+                    Edit Profile
+                </button>
+
             </div>
-                <div>
-                    <FormGetInvolved />
-                </div>
+
+            <div>
+                <FormGetInvolved />
+            </div>
         </>            
     );
 };
