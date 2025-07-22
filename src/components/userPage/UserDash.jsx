@@ -97,7 +97,7 @@ function UserDash() {
             </div>
 
             <div>
-                <FormGetInvolved />
+                <FormGetInvolved currentUser={currentUser} />
             </div>
         </>            
     );

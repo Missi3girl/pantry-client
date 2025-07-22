@@ -24,7 +24,7 @@ const reasons = [
     "Other"
 ];
 
-export default function FormGetInvolved() {
+export default function FormGetInvolved({currentUser}) {
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -153,7 +153,7 @@ export default function FormGetInvolved() {
                     label="Full Name" 
                     name="fullName" 
                     fullWidth 
-                    value={form.fullName} 
+                    value={currentUser.fullName} 
                     onChange={handleChange} 
                     error={!!errors.fullName} 
                     helperText={errors.fullName} 
@@ -170,7 +170,7 @@ export default function FormGetInvolved() {
                     label="Email" 
                     name="email" 
                     fullWidth 
-                    value={form.email} 
+                    value={currentUser.email} 
                     onChange={handleChange} 
                     error={!!errors.email}
                     helperText={errors.email} 
