@@ -19,6 +19,7 @@ function UserDash() {
             try {
                 const userData = JSON.parse(storedUser);
                 setCurrentUser(userData);
+                console.log("User Data from localStorage (currentUser state):", userData);
             } catch (err) {
                 console.error("Error parsing user data from localStorage:", err);
                 localStorage.removeItem("user");
@@ -93,25 +94,6 @@ function UserDash() {
                     Logout
                 </button>
 
-                <button
-                    /* onClick={handleEdit} */
-                    style={{
-                       display: 'block',
-                        width: '150px',
-                        margin: '20px auto',
-                        padding: '12px 25px',
-                        backgroundColor: 'var(--green)',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        fontSize: '1em',
-                        fontWeight: 'bold',
-                        transition: 'background-color 0.3s ease' 
-                    }}>
-                    Edit Profile
-                </button>
-
             </div>
 
             <div>
@@ -121,4 +103,4 @@ function UserDash() {
     );
 };
 
-export default UserDash
+export default UserDash;
