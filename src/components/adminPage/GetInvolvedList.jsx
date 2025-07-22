@@ -13,7 +13,7 @@ import "./AdminDash.css";
 
 const getInvolvedFilters = [
     <TextInput source="q" label="Search" alwaysOn />,
-    <ReferenceInput source="userId" label="User" reference="users" />
+    <TextInput source="fullName" label="Filter by Full Name" />
 ];
 
 export const GetInvolvedList = () => (

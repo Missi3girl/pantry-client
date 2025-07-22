@@ -163,8 +163,8 @@ export default function FormGetInvolved() {
                     sx={{ mb: 2 }} 
                 />
 
-                <TextField l
-                    abel="Email" 
+                <TextField 
+                    label="Email" 
                     name="email" 
                     fullWidth 
                     value={form.email} 
