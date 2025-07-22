@@ -4,20 +4,14 @@ import {
     EmailField, 
     List, 
     TextField,
-    TextInput,
-    ReferenceInput,
     FunctionField
 } from 'react-admin';
 
 import "./AdminDash.css";
 
-const getInvolvedFilters = [
-    <TextInput source="q" label="Search" alwaysOn />,
-    <TextInput source="fullName" label="Filter by Full Name" />
-];
 
 export const GetInvolvedList = () => (
-    <List filters={getInvolvedFilters}>
+    <List>
         <Datagrid>
             <TextField source="fullName" />
             <TextField source="phoneNumber" />

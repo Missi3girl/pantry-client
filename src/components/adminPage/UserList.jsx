@@ -6,21 +6,15 @@ import {
     EmailField, 
     List, 
     SimpleList, 
-    TextInput,
-    ReferenceInput
 } from 'react-admin';
 
 import "./AdminDash.css";
 
-const userFilters = [
-    <TextInput source="q" label="Search" alwaysOn />,
-    <ReferenceInput source="userId" label="User" reference="users" />
-];
 
 export const UserList = () => {
     const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     return (
-        <List filters={userFilters}>
+        <List>
             {isSmall ? (
                 <SimpleList
                     primaryText={(record) => record.name}

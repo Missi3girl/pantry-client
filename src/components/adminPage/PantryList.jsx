@@ -8,13 +8,9 @@ import {
 
 import "./AdminDash.css";
 
-const pantryFilters = [
-    <TextInput source="q" label="Search" alwaysOn />,
-    <ReferenceInput source="userId" label="User" reference="users" />
-];
 
 export const PantryList = () => (
-    <List filters={pantryFilters}>
+    <List>
         <Datagrid> 
             <TextField source="id" />
             <TextField source="pantryName" />
