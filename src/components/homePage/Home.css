@@ -57,29 +57,51 @@ body {
   .locationCard {
     background-color: hsla(41, 100%, 57%, .7);
     width: 84%;
-    height: 195px;
-    padding: 5px;
+    padding: 1px;
     border-radius: 25px;
     text-align: center;
-    font-weight: bold;
     color: #141A13;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     padding-left: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 3px solid #805A83;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem;
-
   }
 
-  .locationCard.popped {
+  .popContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .popFilling {
+    background-color: var(--green);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+    > h2 {
+      color: var(--gold);
+    }
+  }
+
+  .highlighted {
+    background-color: var(--purple);
+    color: white;
+  }
+
+  /* .locationCard.popped {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     z-index: 10;
     position: relative;
-  }
+  } */
 
     .map-box {
     flex-grow: 1;
