@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { submitGetInvolved } from '../../services/getInvolvedSvc';
 import './FormGetInvolved.css';
 import { 
@@ -24,7 +24,9 @@ const reasons = [
     "Other"
 ];
 
-export default function FormGetInvolved({currentUser}) {
+export default function FormGetInvolved({ currentUser }) {
+    console.log("Form received currentUser:", currentUser);
+    
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -34,8 +36,20 @@ export default function FormGetInvolved({currentUser}) {
     });
 
     const [errors, setErrors] = useState({});
-
     const [successOpen, setSuccessOpen] = useState(false);
+
+    useEffect(() => {
+        // Only update if currentUser is not null/empty string 
+        if (currentUser && typeof currentUser === 'object' && currentUser.fullName && currentUser.email) {
+            setForm(prevForm => ({
+                ...prevForm,
+                fullName: currentUser.fullName,
+                email: currentUser.email,
+            }));
+            console.log("FormGetInvolved state updated with currentUser:", currentUser);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentUser]);
 
     // field validation ensures that the required fields are filled out before submitting
     const validate = () => {
@@ -73,8 +87,8 @@ export default function FormGetInvolved({currentUser}) {
           
           // resets form only if valid submission
           setForm({
-            fullName: "",
-            email: "",
+            fullName: currentUser.fullName,
+            email: currentUser.email,
             phoneNumber: "",
             message: "",
             typeOfInquiry: "",
@@ -153,7 +167,7 @@ export default function FormGetInvolved({currentUser}) {
                     label="Full Name" 
                     name="fullName" 
                     fullWidth 
-                    value={currentUser.fullName} 
+                    value={form.fullName} 
                     onChange={handleChange} 
                     error={!!errors.fullName} 
                     helperText={errors.fullName} 
@@ -170,7 +184,7 @@ export default function FormGetInvolved({currentUser}) {
                     label="Email" 
                     name="email" 
                     fullWidth 
-                    value={currentUser.email} 
+                    value={form.email} 
                     onChange={handleChange} 
                     error={!!errors.email}
                     helperText={errors.email} 
