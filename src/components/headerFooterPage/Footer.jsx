@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
-import logoPhoto from '../../assets/Images/logo.gif'
+import logoPhoto from '../../assets/Images/pantrylogo2.png'
 
 function Footer() {
   return (
