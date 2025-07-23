@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 58em; 
+  height: 61em; 
   width: 25%;
   overflow-y: auto; 
   align-items: center;
