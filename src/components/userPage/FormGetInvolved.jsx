@@ -172,9 +172,9 @@ export default function FormGetInvolved({ currentUser }) {
                     helperText={errors.fullName} 
                     sx={{ 
                         mb: 2, 
-                        '& .MuiInputBase-input': { // Styles for the actual typed text
-                            fontSize: '1.5rem', // Change this value as desired
-                            color: 'var(--purple)', // Example: to match your theme
+                        '& .MuiInputBase-input': { 
+                            fontSize: '1.5rem', 
+                            color: 'var(--purple)', 
                         }
                     }} 
                 />
@@ -189,9 +189,9 @@ export default function FormGetInvolved({ currentUser }) {
                     helperText={errors.email} 
                     sx={{ 
                         mb: 2, 
-                        '& .MuiInputBase-input': { // Styles for the actual typed text
-                            fontSize: '1.5rem', // Change this value as desired
-                            color: 'var(--purple)', // Example: to match your theme
+                        '& .MuiInputBase-input': { 
+                            fontSize: '1.5rem', 
+                            color: 'var(--purple)', 
                         }
                     }} 
                 />
@@ -207,9 +207,9 @@ export default function FormGetInvolved({ currentUser }) {
                     helperText={errors.phoneNumber} 
                     sx={{ 
                         mb: 2, 
-                        '& .MuiInputBase-input': { // Styles for the actual typed text
-                            fontSize: '1.5rem', // Change this value as desired
-                            color: 'var(--purple)', // Example: to match your theme
+                        '& .MuiInputBase-input': { 
+                            fontSize: '1.5rem', 
+                            color: 'var(--purple)',
                         }
                     }} 
                 />
@@ -226,9 +226,9 @@ export default function FormGetInvolved({ currentUser }) {
                     helperText={errors.message} 
                     sx={{ 
                         mb: 2, 
-                        '& .MuiInputBase-input': { // Styles for the actual typed text
-                            fontSize: '1.5rem', // Change this value as desired
-                            color: 'var(--purple)', // Example: to match your theme
+                        '& .MuiInputBase-input': { 
+                            fontSize: '1.5rem', 
+                            color: 'var(--purple)',
                         }
                     }} 
                 />

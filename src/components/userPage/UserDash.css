@@ -76,7 +76,7 @@ button {
     text-decoration: underline var(--gold);
 }
 
-h3 {
+.h3User {
     font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
     font-size: 2em;
     padding: 0 1em;
