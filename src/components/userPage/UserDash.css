@@ -1,0 +1,147 @@
+/* Entire About view style page */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+    max-width: none;
+    height: 100vh;
+}
+.mainUserDash {
+    display: flex;
+    background-color: var(--green);
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+#userDash {
+    /* display: flex;
+    flex-direction: column; */
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    border-right: 3px solid var(--gold);
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.formDash {
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    padding-right: 5em;
+    padding-bottom: 10em;
+    justify-content: center;
+}
+
+button {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background-color: var(--green);
+    color: white;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: .9em;
+    transition: background-color 0.3s ease;
+}
+
+.userh1 {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    font-size: 3em;
+    padding: 0 1em;
+    margin-top: 3%;
+    color: var(--grey);
+    text-align: center;
+    padding-bottom: 1.5em;
+    text-decoration: underline var(--gold);
+}
+
+.formh1 {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    font-size: 3em;
+    padding: 0 1em;
+    margin-top: 3%;
+    color: var(--grey);
+    text-align: center;
+    padding-bottom: 0;
+    text-decoration: underline var(--gold);
+}
+
+h3 {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    font-size: 2em;
+    padding: 0 1em;
+    margin-top: 3%;
+    color: var(--grey);
+    text-align: center;
+}
+
+.pUser {
+    color: var(--grey);
+    font-size: 1.5em;
+}
+
+/* #formDiv {
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple);
+     padding: 20px;
+     border-radius: 8px;
+     margin-bottom: 30px;
+     border-left: 4px solid var(--gold);
+
+} */
+
+.purpleBox {
+     background-color: var(--purple);
+     padding: 10px;
+     border-radius: 8px;
+     margin-bottom: 30px;
+     border-left: 3px solid var(--gold);
+     width: 50em;
+     height: 25em;
+    margin-left: 10em;
+}
+
+/* h1 {
+    color: 'var(--black)';
+    margin-bottom: '25px';
+    text-align: 'center';
+} */
+
+/* #photoDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+} */
+
+/* .inline-link {
+    text-decoration: 1px solid underline !important;
+    font-family:  "mrs-eaves-roman-small-caps","mrs-eaves", serif;
+    font-size: 1.25em;
+    font-style: normal;
+}
+
+.inline-link:hover {
+    font-family: "mrs-eaves-roman-small-caps", "mrs-eaves", serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: var(--gold);
+} */
+
+/* 
+ Missy did .inline-link css and changed font color... awaiting approval of Sam/team before pushing
+*/

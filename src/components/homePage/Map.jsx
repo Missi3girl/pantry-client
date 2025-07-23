@@ -1,0 +1,129 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useRef, useEffect, useState } from 'react';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import './Home.css';
+import SearchBar from './SearchBar';
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2FubmVkZG9jcmV3IiwiYSI6ImNtZGNpd2FhcDE5NWQyaXB6eTI5NzhhbzQifQ.tKcPGkwXMJC3Id3b_09fhQ';
+
+const Map = ({ pantries, selectedPantry, setSelectedPantry }) => {
+  const mapContainerRef = useRef(null);
+  const mapRef = useRef(null);
+  const [lng, setLng] = useState(-84.3733);
+  const [lat, setLat] = useState(33.7550);
+  const [zoom, setZoom] = useState(10);
+  const markersRef = useRef([]); 
+  
+  useEffect(() => {
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom,
+    });
+
+    mapRef.current.on('move', () => {
+      setLng(mapRef.current.getCenter().lng.toFixed(4));
+      setLat(mapRef.current.getCenter().lat.toFixed(4));
+      setZoom(mapRef.current.getZoom().toFixed(2));
+    });
+
+    return () => mapRef.current.remove();
+  }, []); // Empty dependency to run only once
+
+  // Create markers and handle marker click
+  useEffect(() => {
+    if (!mapRef.current || pantries.length === 0) return;
+
+    // Clean up previous markers
+    markersRef.current.forEach(marker => marker.remove());
+    markersRef.current = [];
+
+      pantries.forEach((pantry) => {
+      // Ensure valid coordinates on mongo
+      if (isNaN(pantry.lng) || isNaN(pantry.lat)) {
+        console.error(`Invalid coordinates for pantry with ID: ${pantry._id}`);
+        return;
+      }
+
+      const markerColor = 
+      selectedPantry && pantry._id === selectedPantry._id ? 'purple' : 'gold';
+      const marker = new mapboxgl.Marker({
+        color: markerColor,
+      })
+        .setLngLat([pantry.lng, pantry.lat])
+        .addTo(mapRef.current);
+
+      // Add marker to the marker reference array
+      markersRef.current.push(marker);
+
+      // Event listener for click
+      marker.getElement().addEventListener('click', () => {
+        setSelectedPantry(pantry);
+        mapRef.current.flyTo({ center: [pantry.lng, pantry.lat], zoom: 14 });
+      });
+    });
+  }, [pantries, selectedPantry]); 
+
+
+  // Moving map to selected pantry if changed by click
+  useEffect(() => {
+    if (!selectedPantry || !mapRef.current) return;
+
+    if (!isNaN(selectedPantry.lng) && !isNaN(selectedPantry.lat)) {
+      mapRef.current.flyTo({
+        center: [selectedPantry.lng, selectedPantry.lat],
+        zoom: 14,
+        essential: true,
+      });
+    }
+  }, [selectedPantry]);
+
+  // Function to search for the pantry by zip code
+  const findClosestPantry = async (zipCode) => {
+    if (!zipCode) return;
+
+    const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${zipCode}.json?access_token=${mapboxgl.accessToken}`;
+
+    try {
+      const response = await fetch(geocodeUrl);
+      const data = await response.json();
+      if (data.features.length > 0) {
+        const { center } = data.features[0];
+        const [newLng, newLat] = center;
+
+        // Center map and add a marker at the new coordinates
+        mapRef.current.flyTo({ center: [newLng, newLat], zoom: 12 });
+
+        new mapboxgl.Marker({
+          color: 'red',
+        })
+          .setLngLat([newLng, newLat])
+          .addTo(mapRef.current);
+      } else {
+        console.error('No location found for the given zip code');
+      }
+    } catch (error) {
+      console.error('Error fetching geocode:', error);
+    }
+  };
+
+  return (
+    <div>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '2em', paddingRight: '2em' }}>
+        <div className="sidebar" style={{ padding: '0.5rem' }}>
+          <h2 id="bankTitle">Find a Pantry</h2>
+        </div>
+        <SearchBar onSearch={findClosestPantry} /> {/* Search bar added */}
+        <div
+          ref={mapContainerRef}
+          style={{ width: '90%', minHeight: '600px', flexGrow: 1 }}
+        />
+        <p id="lnglat">Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Map;
