@@ -20,7 +20,7 @@ body {
     margin: 0;
   }
 
-  .main-content {
+.main-content {
     background-color: var(--green);
     height: 68vh;
     width: 97.8%;
@@ -57,13 +57,14 @@ body {
   .locationCard {
     background-color: hsla(41, 100%, 57%, .7);
     width: 84%;
-    padding: 1px;
+    padding-top: 10px;
+    padding-right: 4px;
     border-radius: 25px;
     text-align: center;
     color: #141A13;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    padding-left: 4px;
     cursor: pointer;
+    font-size: .70rem;
   }
 
   .popContainer {
@@ -162,12 +163,12 @@ body {
 }
 
 #bankTitle {
-    justify-content: center;
+  justify-content: center;
   align-items: center;
   width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  padding: 0;
+  margin: 0;
+  text-align: center;
   width: 100%;
   padding-top: .4em;
 }
