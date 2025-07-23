@@ -5,7 +5,9 @@ import {
     TextField, 
     EmailField, 
     List, 
-    SimpleList, 
+    SimpleList,
+    TextInput,
+    ReferenceInput
 } from 'react-admin';
 
 import "./AdminDash.css";
@@ -22,12 +24,24 @@ export const UserList = () => {
                     tertiaryText={(record) => record.zipCode}
                 />
             ) : (
-                <Datagrid>
-                    <TextField source="fullName" />
-                    <TextField source="zipCode" />
-                    <EmailField source="email" />
-                    <BooleanField source="isAdmin" />
-                    <TextField source="id" />
+ <Datagrid>
+                    <TextField
+                    source="fullName" 
+                    label="Full Name"
+                    sx={{ maxWidth: 200, whiteSpace: 'normal'}}
+                    />
+                    <TextField
+                    source="zipCode"
+                    sx={{ maxWidth: 100 }}
+                    />
+                    <EmailField source="email"
+                    sx={{ maxWidth: 100 }}
+                    />
+                    <BooleanField source="isAdmin" 
+                    sx={{ maxWidth: 50 }}
+                    />
+                    <TextField source="id" 
+                    sx={{ maxWidth: 300 }}/>
                 </Datagrid>
             )}
         </List> 

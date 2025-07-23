@@ -143,7 +143,7 @@ export default function FormGetInvolved({ currentUser }) {
                                         fontFamily: 'mrs-eaves, serif',
                                         color: 'var(--grey)',
                                         fontSize: '1.5rem',
-                                        padding: '10px 16px',
+                                        padding: '10px 10px',
                                         borderBottom: '1px solid var(--gold)',
                                         '&: last-child': {
                                             borderBottom: 'none'
