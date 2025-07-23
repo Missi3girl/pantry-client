@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 54em; 
+  height: 58em; 
   width: 25%;
   overflow-y: auto; 
   align-items: center;
@@ -63,6 +63,7 @@ body {
     color: #141A13;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     padding-left: 4px;
+    cursor: pointer;
   }
 
   .popContainer {

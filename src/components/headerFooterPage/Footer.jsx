@@ -30,6 +30,9 @@ Our mission is to make it easier for neighbors to find, share, and support local
                    <li><a href="mailto:canneddocrew@gmail.com"  className="footer-link">Email us directly </a></li>
             </ol>
             </div>
+            {/* <div id="footer4">
+              <img className="logoImg" src={logoPhoto} />
+            </div> */}
          </div>
   )
 }

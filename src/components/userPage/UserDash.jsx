@@ -50,10 +50,10 @@ function UserDash() {
                     <div className="purpleBox">
                     <h3 className="h3User">Your Information:</h3>
                     <p className="pUser"><strong>Full Name:</strong> {currentUser.fullName}</p>
-                    <p><strong>Email:</strong> {currentUser.email}</p>
-                    <p><strong>Zip Code:</strong> {currentUser.zipCode}</p>
-                    <p><strong>User Role:</strong> {currentUser.isAdmin ? 'Administrator' : 'Standard User'}</p>
-                <button onClick={handleLogout}>Logout</button>
+                    <p className="pUser"><strong>Email:</strong> {currentUser.email}</p>
+                    <p className="pUser"><strong>Zip Code:</strong> {currentUser.zipCode}</p>
+                    <p className="pUser"><strong>User Role:</strong> {currentUser.isAdmin ? 'Administrator' : 'Standard User'}</p>
+                <button onClick={handleLogout}>LOGOUT</button>
                     </div>
                 </div>
 
