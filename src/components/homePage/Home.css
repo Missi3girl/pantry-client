@@ -14,6 +14,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     min-height: 0;
+    height: 100;
     flex: 1;
     overflow-y: auto;
     padding: 0;
@@ -33,12 +34,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 61em; 
+  max-height: 100vh;
   width: 25%;
   overflow-y: auto; 
   align-items: center;
   padding: 1rem;
   position: relative;
+  height: 69em;
 }
 
 .mapSection {
@@ -117,7 +119,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    height: 300px;
   }
   
   .search-bar {

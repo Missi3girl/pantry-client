@@ -31,6 +31,10 @@ Our mission is to make it easier for neighbors to find, share, and support local
             </ol>
             </div>
             <div id="footer4">
+              <p id="italic">The<br/>
+              Pantry<br/>
+              Door<br/>
+              </p>
               <img className="logoImg" src={logoPhoto} />
             </div>
          </div>
