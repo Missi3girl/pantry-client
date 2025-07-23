@@ -13,8 +13,7 @@ body {
     height: 100vh;
 }
 .mainUserDash {
-    /* display: flex;
-    flex-direction: */
+    display: flex;
     background-color: var(--green);
     height: 100%;
     width: 100%;
@@ -48,11 +47,10 @@ button {
     padding: 12px 25px;
     background-color: var(--green);
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
     cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
+    font-size: .9em;
     transition: background-color 0.3s ease;
 }
 
@@ -89,6 +87,7 @@ h3 {
 
 .pUser {
     color: var(--grey);
+    font-size: 1.5em;
 }
 
 /* #formDiv {
@@ -109,9 +108,8 @@ h3 {
      margin-bottom: 30px;
      border-left: 3px solid var(--gold);
      width: 50em;
-     height: 20em;
+     height: 25em;
     margin-left: 10em;
-     
 }
 
 /* h1 {
