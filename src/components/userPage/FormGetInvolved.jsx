@@ -47,8 +47,7 @@ export default function FormGetInvolved({ currentUser }) {
                 email: currentUser.email,
             }));
             console.log("FormGetInvolved state updated with currentUser:", currentUser);
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        } 
     }, [currentUser]);
 
     // field validation ensures that the required fields are filled out before submitting
