@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
-import logoPhoto from '../../assets/Images/pantrylogo.png'
+import logoPhoto from '../../assets/Images/pantrylogo2.png'
 
 function Footer() {
   return (
@@ -30,9 +30,13 @@ Our mission is to make it easier for neighbors to find, share, and support local
                    <li><a href="mailto:canneddocrew@gmail.com"  className="footer-link">Email us directly </a></li>
             </ol>
             </div>
-            {/* <div id="footer4">
+            <div id="footer4">
+              <p id="italic">The<br/>
+              Pantry<br/>
+              Door<br/>
+              </p>
               <img className="logoImg" src={logoPhoto} />
-            </div> */}
+            </div>
          </div>
   )
 }

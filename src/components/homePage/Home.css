@@ -14,13 +14,14 @@ body {
     flex-wrap: wrap;
     width: 100%;
     min-height: 0;
+    height: 100;
     flex: 1;
     overflow-y: auto;
     padding: 0;
     margin: 0;
   }
 
-.main-content {
+  .main-content {
     background-color: var(--green);
     height: 68vh;
     width: 97.8%;
@@ -29,16 +30,17 @@ body {
 }
 
 .locationList {
-  border: 2px solid var(--gold);
+  border: 2px 0 0 0 solid var(--gold);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 61em; 
+  max-height: 100vh;
   width: 25%;
   overflow-y: auto; 
   align-items: center;
   padding: 1rem;
   position: relative;
+  height: 69em;
 }
 
 .mapSection {
@@ -57,14 +59,14 @@ body {
   .locationCard {
     background-color: hsla(41, 100%, 57%, .7);
     width: 84%;
-    padding-top: 10px;
-    padding-right: 4px;
+    padding: 1px;
     border-radius: 25px;
     text-align: center;
     color: #141A13;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    padding-left: 4px;
     cursor: pointer;
-    font-size: .70rem;
+    text-indent: none;
   }
 
   .popContainer {
@@ -117,7 +119,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    height: 300px;
   }
   
   .search-bar {
@@ -163,12 +165,12 @@ body {
 }
 
 #bankTitle {
-  justify-content: center;
+    justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
   width: 100%;
   padding-top: .4em;
 }
