@@ -1,5 +1,5 @@
 // imports the server api browser url 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4001/api";
 
 async function submitGetInvolved(formData) {
     try { // sending POST req to server to send new json data

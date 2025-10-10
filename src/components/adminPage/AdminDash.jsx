@@ -19,7 +19,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 import './AdminDash.css';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4001/api";
 
 const theme = createTheme();
 
