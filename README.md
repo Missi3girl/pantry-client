@@ -7,3 +7,5 @@ this version includes my personal enhancements and refactoring.
 It currently only has a handful of listings and limited dashboard features, 
 but I have high goals and plans for extension and possible publishing.
 
+Please use the git command, npm run dev, in your terminal,
+and http://localhost:4001 in your browswer, to view the app live.
